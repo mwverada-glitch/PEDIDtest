@@ -468,48 +468,52 @@ nav .search {
     display: flex !important;
 }
 
-
 /* --- Slide Box : Text Left + Image Right --- */
 .slide-box {
-    display: grid;
-    grid-template-columns: 45% 55%;
-    align-items: center;
-    gap: 40px;
-    padding: 40px;
-    background: #003d6a;
-    color: white;
-    width: 100%;
-    height: 100%;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  background: #003d6a;
+  color: white;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;      /* กันไม่ให้เนื้อหาด้านในล้นออกมานอกมุมโค้ง */
 }
 
-.slide-left h2{
-    font-size:32px;
+.slide-left h2 {
+  font-size: 30px;
 }
 
-.slide-left p{
-    line-height:1.7;
-    font-size:18px;
+.slide-left p {
+  line-height: 1.7;
+  font-size: 18px;
 }
 
-.slide-img{
-    width:100%;
-    height:380px;
-    object-fit:cover;
-    object-position:top center;
-    border-radius:12px;
+.slide-right {
+  padding: 20px;
+  box-sizing: border-box;           /* กำหนดระยะห่างจากขอบกรอบใหญ่ตามต้องการ */
 }
-
+.slide-img {
+  width: 100%;
+  height: 410px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 12px;  /* มุมโค้งของรูปด้านใน ปรับให้เล็กกว่ากรอบนอกเล็กน้อยจะดูสวยกว่า */
+  display: block;
+}
 
 /* --- Read More Button --- */
 .read-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: white;
-    color: #003d6a;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    width: fit-content;
+  display: inline-block;
+  padding: 10px 20px;
+  background: white;
+  color: #003d6a;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  width: fit-content;
 }
 
 /* --- For Mobile (Stack Vertical) --- */
