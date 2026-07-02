@@ -546,9 +546,9 @@ nav .search {
 }
 
 /* สี */
-.pink { background-color: #C5D6BA; }
-.teal { background-color: #D6C3CE; }
-.lightpink { background-color: #F5E3CB; }
+.pink { background-color: #4D8C8A; }
+.teal { background-color: #8A6F9E; }
+.lightpink { background-color: #C96A2D; }
 
 /* ปุ่ม */
 .btn-read,
@@ -571,7 +571,7 @@ nav .search {
 
 /* section ด้านล่าง */
 .public-section .blue {
-    background-color: #84BAC9;
+    background-color: #4994a8;
     color: white;
     padding: 60px 40px;
     text-align: center;
@@ -637,7 +637,7 @@ nav .search {
 }
 
 .news-card h3 {
-    font-size: 22px;
+    font-size: px;
     font-weight: 700;
     margin: 20px 20px 10px;
     color: #3E3E3E;
