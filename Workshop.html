@@ -175,16 +175,123 @@
 </head>
 
 <body>
+    <style>
+        /* HERO */
+        .hero {
+            background:#71b7c3;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0; left: 0;
+            opacity: 0.05;
+            background-size: cover;
+        }
+        .hero h1 {
+            font-size: 50px;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+        .hero p {
+            margin-top: 10px;
+            font-size: 24px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
 
-<div class="content-box">
-    <h1>Training / Workshop: Example Content.............................</h1>
-    <p>ใส่เนื้อหาอะไรก็ได้ของเคสนี้...</p>
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
 
-    <!-- ใส่รูป -->
-    <img src="case4.png" alt="Case 4 Image">
+        /* TOPIC CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
 
-</div>
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
 
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #0d355d;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .read-more {
+            margin-top: 10px;
+            display: inline-block;
+            color: #0d355d;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .read-more:hover {
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Education Training</h1>
+        <p>การศึกษาและการฝึกอบรมด้านโรคติดเชื้อ</p>
+    </section>
+
+    <div class="container">
+
+        <!-- TOPIC CARDS -->
+        <div class="cards">
+
+            <div class="card">
+                <img src="#">
+                <div class="card-body">
+                    <h3>หลักสูตรการฝึกอบรบแพทย์ประจำบ้านต่อยอด</h3>
+                    <p>เพื่อวุฒิบัตรแสดงความรู้ความชำนาญในการประกอบวิชาชีพเวชกรรม อนุสาขากุมารเวชสาสตร์โรคติดเชื้อ</p>
+                    <div class="read-more"><a href="03-Curriculum-fellow-ID.pdf" target="_blank">Read more →</a>
+                    </div>
+                </div>
+            </div>
+
+    </div>
 <script>
 function openModal(mode) {
     document.getElementById("popupModal").style.display = "flex";
