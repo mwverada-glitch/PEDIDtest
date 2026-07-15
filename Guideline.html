@@ -211,45 +211,101 @@
 .btn-download:hover {
     background: #005b99;
 }
+
+/* กล่องแต่ละหมวด */
+.guide-group{
+    width:100%;
+    margin-bottom:70px;
+}
+
+/* หัวข้อหมวด */
+.group-title{
+    font-size:32px;
+    color:#005a8d;
+    margin-bottom:30px;
+    text-align:left;
+    border-left:8px solid #007acc;
+    padding-left:18px;
+    font-weight:700;
+}
+
+/* Grid ของการ์ด */
+.guide-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+    gap:35px;
+}
+
+/* การ์ดเต็มพื้นที่ */
+.guideline-card{
+    max-width:none;
+}
 </style>
 
 <section class="guideline-section" id="guideline">
-    <div class="guideline-card">
 
-        <img src="guideline.jpg" class="gd-icon" alt="Guideline Icon">
+    <!-- Thailand -->
+    <div class="guide-group">
 
-        <h2 class="gd-title">Update Guideline</h2>
+        <h2 class="group-title">🇹🇭 Thailand Guidelines</h2>
 
-        <p class="gd-detail">
-            <strong>IDSA/PIDS 2026 Guidelines</strong><br>
-            for the Management of Community-Acquired Pneumonia (CAP) <br>
-            in Infants and Children Older Than 3 Months of Age
-        </p>
+        <div class="guide-grid">
 
-        <a href="https://www.idsociety.org/globalassets/idsa/practice-guidelines/cap-2026/the-management-of-community-acquired-pneumonia-in-infants-and-children-older-than-3-months-of-age-topic-manuscript-2.25.26.pdf" class="btn-download">
-            ⬇ Download PDF
-        </a>
+            <div class="guideline-card">
+
+                <img src="messageImage_1782287603866.jpg" class="gd-icon" alt="Guideline Icon">
+
+                <h2 class="gd-title">Update Guideline</h2>
+
+                <p class="gd-detail">
+                    <strong>Protecting Thailand's Infants: 2026 RSV Prevention Guidelines</strong><br>
+                    แนวทางการให้ภูมิคุ้มกันสำเร็จรูป เพื่อป้องกันโรครุนแรงจากการติดเชื้อไวรัสอาร์เอสวี ปี พ.ศ. 2569
+                </p>
+
+                <a href="https://drive.google.com/file/d/1zZi_e6OvcWz_RpuGDn9n9bUT8k4gjhuP/view?usp=sharing"
+                   class="btn-download">
+                    ⬇ Download PDF
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 
-    <div class="guideline-card">
+    <!-- International -->
+    <div class="guide-group">
 
-        <img src="messageImage_1782287603866.jpg" class="gd-icon" alt="Guideline Icon">
+        <h2 class="group-title">🌍 International Guidelines</h2>
 
-        <h2 class="gd-title">Update Guideline</h2>
+        <div class="guide-grid">
 
-        <p class="gd-detail">
-            <strong>Protecting Thailand's Infants: 2026 RSV Prevention Guidelines</strong><br>
-            แนวทางการให้ภูมิคุ้มกันสําเร็จรูป เพื่อป้องกันโรครุนแรงจากการติดเชื้อไวรัสอาร์เอสวีปี พ.ศ. 2569<br>
-        </p>
+            <div class="guideline-card">
 
-        <a href="https://drive.google.com/file/d/1zZi_e6OvcWz_RpuGDn9n9bUT8k4gjhuP/view?usp=sharing" class="btn-download">
-            ⬇ Download PDF
-        </a>
+                <img src="guideline.jpg" class="gd-icon" alt="Guideline Icon">
+
+                <h2 class="gd-title">Update Guideline</h2>
+
+                <p class="gd-detail">
+                    <strong>IDSA/PIDS 2026 Guidelines</strong><br>
+                    for the Management of Community-Acquired Pneumonia (CAP)
+                    in Infants and Children Older Than 3 Months of Age
+                </p>
+
+                <a href="https://www.idsociety.org/globalassets/idsa/practice-guidelines/cap-2026/the-management-of-community-acquired-pneumonia-in-infants-and-children-older-than-3-months-of-age-topic-manuscript-2.25.26.pdf"
+                   class="btn-download">
+                    ⬇ Download PDF
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 
 </section>
+
+
 <script>
 function openModal(mode) {
     document.getElementById("popupModal").style.display = "flex";

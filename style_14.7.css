@@ -171,7 +171,7 @@ body {
 /* Top Bar */
 
 .top-bar{
-    background: #5e458c;
+    background: #7d65ab;
     color: white;
     font-size: 20px;
     padding:20px 4%;
@@ -228,7 +228,7 @@ body {
 }
 
 header{
-    background: #106b51;
+    background: #17765b;
     padding:12px 4%;
     display:flex;
     justify-content:space-between;
@@ -733,7 +733,7 @@ nav .search {
 
 
 .contact-section {
-    background: #4A2C82;
+    background: #7d65ab;
     padding: 60px 0;
 }
 
@@ -747,7 +747,7 @@ nav .search {
 
 .contact-form {
     flex: 1;
-    background: #4A2C82;
+    background: #7d65ab;
     border-radius: 20px;
     padding: 30px;
     color: white;
@@ -1357,7 +1357,7 @@ textarea {
 .personnel-section {
     height: 220px;
     padding: 40px 0;
-    background: #0B6149;
+    background: #17765b;
     background-size: cover;
 
 }
