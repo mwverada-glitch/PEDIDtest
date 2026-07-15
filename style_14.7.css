@@ -35,8 +35,9 @@ h1,h2,h3,h4,h5,p,a,button{
     overflow-wrap: break-word;
     word-break: break-word;
 }
-
-
+p {
+    font-weight: normal !important;
+}
 
 /* ให้ header / nav / dropdown ลอยอยู่ด้านบนสุด */
 header, nav, .dropdown-menu {
@@ -235,7 +236,6 @@ header,
     z-index: 10 !important;
 }
 
-/* Logo */
 .logo-area {
     display: flex;
     align-items: center;
@@ -245,8 +245,8 @@ header,
 }
 
 .logo-circle {
-    width:clamp(70px,8vw,120px);
-    height:clamp(70px,8vw,120px);
+    width:clamp(50px,6vw,90px);
+    height:clamp(50px,6vw,90px);
     border-radius: 50%;
     padding: 6px;
     display: flex;
@@ -254,6 +254,7 @@ header,
     justify-content: center;
     overflow: hidden;
 }
+
 .logo-circle img {
     width: 100%;
     height: 100%;
@@ -262,8 +263,9 @@ header,
 }
 
 .logo-round {
-    width: clamp(120px, 14vw, 180px);
+    width: clamp(90px, 10vw, 130px);
     padding: 6px;
+    margin-top: 10px;
     background: white;
     border-radius: 20px;
     overflow: hidden;
@@ -400,29 +402,6 @@ nav .search {
     color: #444;
     text-align: justify;
 }
-
-/* RIGHT SIDE (IMAGE) */
-.about-right {
-    flex:1 1 420px;
-    display: flex;
-    align-items: center;
-
-}
-
-.about-right img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 22px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-}
-.about-right img {
-    transition: transform 0.4s ease;
-}
-
-.about-right img:hover {
-    transform: scale(1.03);
-}
 /*สำหรับมือถือ*/ 
 @media (max-width: 768px) {
 
@@ -443,15 +422,12 @@ nav .search {
     .about-left p {
         font-size: 16px;
     }
-
-    .about-right img {
-        height: 300px;
-    }
 }
 
 /*service*/ 
 
 .services{
+    margin-top:30px;
 
     display:grid;
 
@@ -575,6 +551,12 @@ nav .search {
         width: 100%;
     }
 }
+.icon {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 20px;
+    text-align: center;
+}
 
 /* เลย์เอาต์เป็นแถวเดียว */
 .info-section {
@@ -643,45 +625,37 @@ nav .search {
 
 .news-section {
     width: 100%;
-    padding: 60px 0;
+    padding: 35px 0;
     text-align: center;
     font-family: "Prompt", sans-serif;
 }
 
 .news-title {
-    font-size: 32px;
+    font-size: 24px;
     color: #003d6a;
     font-weight: 700;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 .news-grid{
 
-width:min(1200px,92%);
+width:min(1000px,92%);
 margin:auto;
 
 display:grid;
 
 grid-template-columns:
-repeat(auto-fit,minmax(300px,1fr));
+repeat(auto-fit,minmax(260px,1fr));
 
-gap:30px;
+gap:25px;
 }
 
-
-.news-grid {
-    width: 90%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
 
 .news-card {
     background: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;          /* เพิ่มบรรทัดนี้ */
-    padding-bottom: 25px;
+    padding-bottom: 15px;
     transition: transform .3s ease;
 }
 
@@ -691,31 +665,33 @@ gap:30px;
 
 .news-card img {
     width: 100%;
-    height: 350px;             /* หรือ 280px ตามต้องการ */
+    height: 190px;
     object-fit: cover;
     object-position: center;
     display: block;
 }
 
 .news-card h3 {
-    font-size: px;
+    font-size: 15px;
     font-weight: 700;
-    margin: 20px 20px 10px;
+    margin: 10px 16px 5px;
     color: #3E3E3E;
 }
 
 .news-card p {
     color: #555;
-    padding: 0 20px;
+    font-size: 13px;
+    padding: 0 16px;
 }
 
 .news-btn {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 10px;
     background: lightcyan;
     color: #003d6a;
-    padding: 8px 20px;
-    border-radius: 25px;
+    padding: 6px 16px;
+    font-size: 13px;
+    border-radius: 18px;
     text-decoration: none;
     font-weight: 600;
 }
@@ -723,6 +699,7 @@ gap:30px;
 .news-btn:hover {
     background: lightcyan;
 }
+
 
 .contact-section {
     background: #4A2C82;
@@ -814,16 +791,22 @@ textarea {
     font-size: 20px;
 }
 
-.social-icons img {
-    width: 40px;
-    margin-right: 15px;
-}
-
 .contact-logo {
     margin-top: 20px;
     width: 180px;
 }
 
+.social-icons img {
+    width: 40px;
+    margin-right: 15px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 /*fashcard*/
 .quiz-section {
     padding-top: 25px;   /*← เผื่อหัวข้อไม่ติดส่วนก่อนหน้านี้ */
@@ -882,9 +865,7 @@ textarea {
     justify-content: center;
 
     /* เงาสองด้าน ทำให้กล่องดูนิ่ม */
-    box-shadow: 
-        6px 6px 15px rgba(0,0,0,0.1),
-        
+    box-shadow: 6px 6px 15px rgba(0,0,0,0.1);
 }
 .quiz-content h3 {
     text-align: center;
@@ -1153,6 +1134,7 @@ textarea {
 .modal-content {
     background: linear-gradient(135deg, #54a3bc, plum);
     width: 500px;
+    max-width: 90%;
     margin: 8% auto;
     padding: 30px;
     border-radius: 20px;
@@ -1265,8 +1247,11 @@ textarea {
     align-items: center;
     gap: 20px;
 }
+
 .personnel-left{
-    height: 200px;   
+    height: 200px;
+    display: flex;
+    justify-content: center;
 }
 /* ซ้าย - รูปใหญ่ */
 .personnel-left img {
@@ -1274,6 +1259,8 @@ textarea {
     height:200px;
     border-radius: 10px;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
 
 }
 
@@ -1375,4 +1362,88 @@ display:block;
 .btn-alumni:hover{
     transform: translateY(-3px);
     box-shadow: 0 10px 22px rgba(76,158,217,0.45);
+}
+
+/* ===================================================================
+   RESPONSIVE FIXES (เพิ่มเติม)
+   จุดประสงค์: ให้ layout เท่ากันทุกขนาดจอ + ตัวหนังสือไม่ล้นกรอบ
+   วางไว้ท้ายไฟล์เพื่อให้ชนะ (override) กฎที่ขัดแย้งกันด้านบน
+   =================================================================== */
+
+/* กันข้อความล้นกรอบทุก element ที่มีข้อความ ไม่ใช่แค่ h1-h6/p/a/button */
+li, span, div, td, th, label, input, textarea, select {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    min-width: 0; /* กัน flex/grid item ดันความกว้างจนล้น */
+}
+
+/* navbar: กันเมนูดันจอแตกในมือถือ */
+.navbar {
+    flex-wrap: wrap;
+}
+.navbar li {
+    margin: 8px 14px;
+}
+
+/* contact section: กันกล่องฟอร์ม + กล่องข้อมูลติดกันจนล้นจอมือถือ */
+.contact-container {
+    flex-wrap: wrap;
+}
+
+/* personnel section: เป็น 2 คอลัมน์เฉพาะจอใหญ่พอ, จอเล็กต้องซ้อนกันแนวตั้ง */
+@media (max-width: 768px) {
+    .personnel-container {
+        grid-template-columns: 1fr;
+        width: 90%;
+        text-align: center;
+    }
+    .personnel-left {
+        height: auto;
+    }
+    .personnel-left img {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+/* quiz card: จอเล็กให้ไอคอน+ข้อความซ้อนกันแนวตั้ง ไม่บีบจนตัวหนังสือแตก */
+@media (max-width: 600px) {
+    .quiz-card.fancy {
+        flex-direction: column;
+        width: 90%;
+        padding: 25px 20px;
+        text-align: center;
+    }
+}
+
+/* news grid: บังคับ breakpoint ให้ชัดเจนขึ้นแทนการพึ่ง auto-fit อย่างเดียว */
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* research menu: ลด padding ด้านข้างในจอเล็กกันเนื้อหาถูกบีบแคบ */
+@media (max-width: 600px) {
+    .research-menu {
+        padding: 40px 5%;
+    }
+}
+
+/* modal: กันป็อปอัพกว้างเกินจอในมือถือทุกจุดที่มี .modal-content ในไฟล์นี้ */
+.modal-content {
+    max-width: 90%;
+}
+
+/* hero swiper slide box: จอกลาง (tablet) ปรับสัดส่วนก่อนจะตกไปเป็น 1 คอลัมน์ที่ 768px */
+@media (max-width: 900px) {
+    .slide-box {
+        height: auto;
+        min-height: 500px;
+    }
 }

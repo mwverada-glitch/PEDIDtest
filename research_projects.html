@@ -157,150 +157,204 @@
 
     </nav>
 </header>
-<style>
-    body {
-  font-family: "Prompt", sans-serif;
-  background: #f5f6fa;
-  margin: 0;
+
+<style> 
+.projects-section{
+    padding:80px 8%;
+    background:#f8fafc;
 }
 
-/* Section Container */
-.projects-section .title {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 30px;
-  color: #2c3e50;
-  font-weight: 600;
+.projects-section .title{
+    text-align:center;
+    font-size:2.5rem;
+    color:#003d6a;
+    margin-bottom:10px;
 }
 
-/* Filter Box */
-.filter-box {
-  text-align: center;
-  margin-bottom: 25px;
+.projects-section .subtitle{
+    text-align:center;
+    color:#64748b;
+    margin-bottom:40px;
 }
 
-.filter-box select {
-  padding: 10px 15px;
-  border-radius: 10px;
-  border: 1px solid #cdf1d6;
-  font-size: 1rem;
+.filter-box{
+    display:flex;
+    justify-content:center;
+    margin-bottom:35px;
 }
 
-/* Card Grid */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-  gap: 25px;
+.filter-box select{
+    padding:12px 18px;
+    border-radius:12px;
+    border:1px solid #dbeafe;
+    background:white;
+    font-size:15px;
 }
 
-/* Cards */
-.project-card {
-  background: #fdedf9;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: 0.2s;
-  position: relative;
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+    gap:30px;
 }
 
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+.project-card{
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    overflow:hidden;
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
 }
 
-/* Tags */
-.tag {
-  background: #3498db;
-  padding: 6px 12px;
-  font-size: 0.8rem;
-  color: #fff;
-  border-radius: 50px;
-  position: absolute;
-  top: 18px;
-  right: 18px;
+.project-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
 }
 
-.purple { background: #9b59b6; }
-.green { background: #27ae60; }
-
-/* Titles & Text */
-.project-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 20px 0 10px;
-  color: #2d3436;
+.card-top{
+    padding:20px 25px;
+    background:linear-gradient(135deg,#4A2C82,#2E8B57);
+    color:white;
 }
 
-.project-description {
-  color: #636e72;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 20px;
+.project-id{
+    font-size:13px;
+    letter-spacing:1px;
+    opacity:.9;
 }
 
-/* Button */
-.btn-view {
-  display: inline-block;
-  padding: 10px 15px;
-  border-radius: 10px;
-  background: #6c5ce7;
-  color: white;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: 0.2s;
+.project-title{
+    font-size:22px;
+    font-weight:600;
+    margin-top:10px;
+    line-height:1.4;
 }
 
-.btn-view:hover {
-  background: #341f97;
+.card-body{
+    padding:25px;
 }
+
+.project-description{
+    color:#475569;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.badges{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.tag{
+    background:#ede9fe;
+    color:#4A2C82;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.status{
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.status.recruiting{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.status.ongoing{
+    background:#dbeafe;
+    color:#1d4ed8;
+}
+
 </style>
 
+
 <section class="projects-section">
-    <h2 class="title">Ongoing Research Projects</h2>
-</section>
 
-    <!-- Filter -->
-    <div class="filter-box">
-      <select>
+<h2 class="title">Ongoing Research Projects</h2>
+
+<p class="subtitle">
+Current clinical studies conducted by the Pediatric Infectious Diseases Unit
+</p>
+
+<div class="filter-box">
+    <select>
         <option>All Categories</option>
+        <option>Clinical Trial</option>
         <option>HIV</option>
-        <option>Adolescent Health</option>
         <option>Vaccine</option>
-        <option>Clinical Trials</option>
-      </select>
+    </select>
+</div>
+
+<div class="project-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+
+        <div class="card-top">
+            <div class="project-id">PEDID-001</div>
+
+            <h3 class="project-title">
+                Body Fat Distribution in Thai Youth and Young Adults with
+                Perinatally Acquired HIV
+            </h3>
+        </div>
+
+        <div class="card-body">
+
+            <div class="badges">
+                <span class="tag">Clinical Trial</span>
+                <span class="status recruiting">Ongoing</span>
+            </div>
+
+            <p class="project-description">
+                การกระจายตัวของไขมันในร่างกายในเยาวชนและผู้ใหญ่ตอนต้นที่ได้รับเชื้อเอชไอวีจากมารดา
+                ที่เปลี่ยนมาใช้ยาต้านไวรัสสูตรที่ประกอบด้วยยาโดลูเทกราเวียร์
+            </p>
+
+        </div>
+
     </div>
 
-    <!-- Project Cards -->
-    <div class="project-grid">
+    <!-- Project 2 -->
+    <div class="project-card">
 
-      <div class="project-card">
-        <span class="tag">Clinical Trial</span>
-        <h2 class="project-title">PEDID-001: Body Fat Distribution in Thai Youth and Young Adults with  
-            Perinatally Acquired HIV Transitioned to Dolutegravir-Containing Regimens</h2>
-        <p class="project-description">
-           การกระจายตัวของไขมันในร่างกายในเยาวชนและผู้ใหญ่ตอนต้นที่ได้รับเชื้อเอชไอวีจากมารดาที่เปลี่ยนมาใช้ยาต้าน
-           ไวรัสสูตรที่ประกอบด้วยยาโดลูเทกราเวียร์   
-        </p>
-      </div>
+        <div class="card-top">
+            <div class="project-id">PEDID-002</div>
 
-      <div class="project-card">
-        <span class="tag purple">Clinical Trial</span>
-        <h2 class="project-title">PEDID-002: Cardiac Morphology and Function in Thai Youth and Young Adults with 
-            Perinatally Acquired HIV Transitioned to Dolutegravir-Containing Regimens </h2>
-        <p class="project-description">
-           ลักษณะทางกายวิภาคและการทำงานของหัวใจในเยาวชนและผู้ใหญ่ตอนต้นที่ได้รับเชื้อเอชไอวีจากมารดาที่เปลี่ยนมา
-           ใช้ยาต้านไวรัสสูตรที่ประกอบด้วยยาโดลูเทกราเวียร์  
-        </p>
-      </div>
+            <h3 class="project-title">
+                Cardiac Morphology and Function in Thai Youth and Young Adults
+                with Perinatally Acquired HIV
+            </h3>
+        </div>
+
+        <div class="card-body">
+
+            <div class="badges">
+                <span class="tag">Clinical Trial</span>
+                <span class="status ongoing">Ongoing</span>
+            </div>
+
+            <p class="project-description">
+                ลักษณะทางกายวิภาคและการทำงานของหัวใจในเยาวชนและผู้ใหญ่ตอนต้นที่ได้รับเชื้อเอชไอวีจากมารดา
+                ที่เปลี่ยนมาใช้ยาต้านไวรัสสูตรที่ประกอบด้วยยาโดลูเทกราเวียร์
+            </p>
+
+        </div>
 
     </div>
-  </div>
-</section>
 
-
-
+</div>
 
 </section>
+
 <script>
 function openModal(mode) {
     document.getElementById("popupModal").style.display = "flex";
