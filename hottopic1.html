@@ -2,10 +2,13 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>Hot Topic1</title>
-<link rel="stylesheet" href="style.css">
+<title>About Our Unit</title>
+<link rel="stylesheet" href="style_14.7.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+<script src="search-data.js"></script>
+<script src="search.js"></script>
 </head>
 <style>
 .dropdown-wrapper {
@@ -23,8 +26,6 @@
 <!-- DEMO BUTTONS -->
             <button class="btn-primary" onclick="openModal('login')">เข้าสู่ระบบ</button>
             <button class="btn-primary" onclick="openModal('register')">ลงทะเบียน</button>
-            <button class="lang">TH</button>
-            <button class="lang">EN</button>
         </div>
     </div>
 <div id="popupModal" class="modal">
@@ -79,6 +80,7 @@
 
     </div>
 </div>
+
 <!-- HEADER -->
 <header>
     <div class="logo-area">
@@ -113,13 +115,12 @@
             <a class="dropdown-link">CONTENT ▾</a>
             <ul class="dropdown-menu">
                 <li><a href="Guideline.html">Guideline</a></li>
-                <li><a href="Case Study.html">Case Study</a></li>
 
                 <!-- Submenu -->
                 <li class="has-submenu">
                     <a href="#" class="submenu-toggle">Medical content ▾</a>
                     <ul class="submenu">
-                        <li><a href="Medical content.html">Medical content</a></li>
+                        <li><a href="Medical content.html">Medical Poscast</a></li>
                         <li><a href="info12.5.html">ความรู้ทั่วไป</a></li>
                     </ul>
                 </li>
@@ -144,18 +145,19 @@
             <ul class="dropdown-menu">
                 <li><a href="news.html">NEWS</a></li>
                 <li><a href="Event.html">EVENTS</a></li>
-                <li><a href="News3.html">ประกาศ / ดาวน์โหลด</a></li>
             </ul>
         </div>
 
-        <a href="contact.html">CONTACT US</a>
+        <a href="#contact">CONTACT US</a>
         <span class="search">🔍</span>
         <div class="search-bar" id="searchBar">
             <input type="text" id="searchInput" placeholder="พิมพ์เพื่อค้นหา...">
-            <button onclick="searchFunction()">ค้นหา</button>
+            <button type="button" id="searchBtn">ค้นหา</button>
+            <div id="searchResults"></div>
         </div>
     </nav>
 </header>
+
 <style>
 .news-content {
     max-width: 1200px;          /* ⭐ กว้างขึ้นจาก 900 → 1200 */

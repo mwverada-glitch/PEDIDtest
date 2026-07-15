@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>รายชื่อบุคลากร</title>
+<title>Personal</title>
 <link rel="stylesheet" href="style_14.7.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -26,8 +26,6 @@
 <!-- DEMO BUTTONS -->
             <button class="btn-primary" onclick="openModal('login')">เข้าสู่ระบบ</button>
             <button class="btn-primary" onclick="openModal('register')">ลงทะเบียน</button>
-            <button class="lang">TH</button>
-            <button class="lang">EN</button>
         </div>
     </div>
 <div id="popupModal" class="modal">
@@ -82,6 +80,7 @@
 
     </div>
 </div>
+
 <!-- HEADER -->
 <header>
     <div class="logo-area">
@@ -116,13 +115,12 @@
             <a class="dropdown-link">CONTENT ▾</a>
             <ul class="dropdown-menu">
                 <li><a href="Guideline.html">Guideline</a></li>
-                <li><a href="Case Study.html">Case Study</a></li>
 
                 <!-- Submenu -->
                 <li class="has-submenu">
                     <a href="#" class="submenu-toggle">Medical content ▾</a>
                     <ul class="submenu">
-                        <li><a href="Medical content.html">Medical content</a></li>
+                        <li><a href="Medical content.html">Medical Poscast</a></li>
                         <li><a href="info12.5.html">ความรู้ทั่วไป</a></li>
                     </ul>
                 </li>
@@ -147,11 +145,10 @@
             <ul class="dropdown-menu">
                 <li><a href="news.html">NEWS</a></li>
                 <li><a href="Event.html">EVENTS</a></li>
-                <li><a href="News3.html">ประกาศ / ดาวน์โหลด</a></li>
             </ul>
         </div>
 
-        <a href="contact.html">CONTACT US</a>
+        <a href="#contact">CONTACT US</a>
         <span class="search">🔍</span>
         <div class="search-bar" id="searchBar">
             <input type="text" id="searchInput" placeholder="พิมพ์เพื่อค้นหา...">
@@ -204,17 +201,18 @@
         object-fit: cover;
         margin-bottom: 5px;
         border: 3px solid #cde7f3;
+        margin: 0 auto 15px; /* จัดกึ่งกลาง */
     }
 
     .person-name {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
         color: #003d6a;
         margin-bottom: 5px;
     }
 
     .person-position {
-        font-size: 18px;
+        font-size: 16px;
         color: black;
         margin-bottom: 5px;
     }
@@ -229,14 +227,13 @@
 </head>
 
 <body>
-
-<h1>รายชื่อบุคลากร</h1>
+<h1 style="margin-top: 50px;">รายชื่อบุคลากร</h1>
 
 <div class="person-grid">
 
     <!-- ตัวอย่างบุคลากร -->
     <div class="person-card">
-        <img src="Tavitiya_S.png" alt="person">
+        <img src="AJJ.png" alt="person">
         <div class="person-name">รศ.ดร.พญ.ทวิติยา&nbsp;สุจริตรักษ์
             <P>Tavitiya Sudjaritruk, M.D.,Sc.M,Ph.D.</P>
         </div>
@@ -334,7 +331,7 @@
         <a href="#" class="pdf-link" target="_blank">📄Cirriculum Vitae (CV)</a>
     </div>
         <div class="person-card">
-        <img src="46993664_Unknown.JPG" alt="person">
+        <img src="wirada.png" alt="person">
         <div class="person-name">นางสาววีรดา&nbsp;คุณเวช
             <p>Wirada Khunnawet</p>
         </div>

@@ -35,6 +35,13 @@ h1,h2,h3,h4,h5,p,a,button{
     overflow-wrap: break-word;
     word-break: break-word;
 }
+h2{
+    font-size: clamp(10px, 3vw, 20px);
+}
+
+h3{
+    font-size: clamp(16px, 2vw, 16px);
+}
 p {
     font-weight: normal !important;
 }
@@ -164,8 +171,9 @@ body {
 /* Top Bar */
 
 .top-bar{
-    background: #4A2C82;
+    background: #5e458c;
     color: white;
+    font-size: 20px;
     padding:20px 4%;
     display:flex;
     justify-content:space-between;
@@ -187,7 +195,7 @@ body {
 /* ปุ่ม login/register */
 .btn-primary {
     background: #ffffff;
-    color: #4A2C82;
+    color: #5e458c;
     border: none;
     padding: 10px 22px;
     border-radius: 10px;
@@ -220,7 +228,7 @@ body {
 }
 
 header{
-    background: #0B6149;
+    background: #106b51;
     padding:12px 4%;
     display:flex;
     justify-content:space-between;
@@ -568,11 +576,12 @@ nav .search {
 
 /* กล่อง */
 .info-card {
-    padding: 60px 40px;
+    height: 250px;
+    padding: 30px 40px;
     color: white;
     text-align: center;
-    font-family: "Prompt", sans-serif;
     width: 100%;
+    box-sizing: border-box;
 }
 
 /* สี */
@@ -584,7 +593,7 @@ nav .search {
 .btn-read,
 .btn-learn {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 12px;
     background: white;
     color: #009688;
     padding: 8px 22px;
@@ -600,63 +609,72 @@ nav .search {
 }
 
 /* section ด้านล่าง */
+.public-section {
+    margin-top: 40px;   /* เพิ่มช่องว่างจาก section ก่อนหน้า */
+}
+
 .public-section .blue {
     background-color: #4994a8;
     color: white;
-    padding: 60px 40px;
+    padding: 35px 40px;  /* ลดความสูงจาก 60px */
     text-align: center;
-} 
+}
+
+/* icon card */
 .icon-card {
-    background: #d8f2fa;        /* ฟ้าอ่อนโทนเว็บ */
-    padding: 25px;
+    background: #d8f2fa;
+    padding: 15px 20px;   /* ลดความสูงของ card */
+
     border-radius: 15px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
+
     box-shadow: 0 6px 12px rgba(0,0,0,0.08);
     transition: 0.2s;
 }
 
+/* ลดขนาด icon */
+.icon-card img,
+.icon-card i {
+    width: 45px;
+    height: 45px;
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
 .icon-card:hover {
-    background: #c3e8f5;        /* hover ฟ้าเข้มนิด */
+    background: #c3e8f5;
 }
 
 /* ===== NEWS & EVENTS ===== */
 
-.news-section {
-    width: 100%;
-    padding: 35px 0;
+.news-section{
+    padding:0;
+    text-align:left;
+}
+
+.news-title{
+    margin-top: 20px;
     text-align: center;
-    font-family: "Prompt", sans-serif;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color:#003d6a;
 }
 
-.news-title {
-    font-size: 24px;
-    color: #003d6a;
-    font-weight: 700;
-    margin-bottom: 25px;
-}
 .news-grid{
-
-width:min(1000px,92%);
-margin:auto;
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(260px,1fr));
-
-gap:25px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
 }
-
-
-.news-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;          /* เพิ่มบรรทัดนี้ */
-    padding-bottom: 15px;
-    transition: transform .3s ease;
+.news-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    width: 90%;
+    height:400;          /* กำหนดความสูงเท่ากัน */
 }
 
 .news-card:hover {
@@ -665,35 +683,48 @@ gap:25px;
 
 .news-card img {
     width: 100%;
-    height: 190px;
+    height: 180px;
     object-fit: cover;
-    object-position: center;
-    display: block;
 }
 
-.news-card h3 {
-    font-size: 15px;
-    font-weight: 700;
-    margin: 10px 16px 5px;
-    color: #3E3E3E;
+.news-card h3{
+    font-size:14px;
+    line-height:1.35;
+    padding:18px 20px 10px;
 }
 
-.news-card p {
-    color: #555;
-    font-size: 13px;
-    padding: 0 16px;
+.news-card p{
+    font-size:12px;
+    line-height:1.5;
+    padding:0 20px;
+    display:-webkit-box;
+    -webkit-line-clamp:4;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
 }
 
 .news-btn {
-    display: inline-block;
-    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;   /* ให้กรอบพอดีกับข้อความ */
+    align-self: center;   /* จัดปุ่มให้อยู่กลาง */
+
+    margin-top: auto;
+    margin-bottom: 20px;
+
     background: lightcyan;
     color: #003d6a;
+
     padding: 6px 16px;
     font-size: 13px;
+
     border-radius: 18px;
     text-decoration: none;
     font-weight: 600;
+
+    white-space: nowrap;  /* ป้องกันข้อความขึ้นบรรทัดใหม่ */
 }
 
 .news-btn:hover {
@@ -824,54 +855,101 @@ textarea {
 }
 .quiz-card.fancy {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 30px;
+    text-align: center;
+    gap: 20px;
 
-    width: 80%;           /* ← ให้พอดีกับกล่อง Research */
-    max-width: 900px;     /* ← ไม่ให้กว้างเกิน */
-    margin: 20px auto;    /* ← จัดให้อยู่ตรงกลาง */
+    width: 100%;
+    margin: 0;
+    padding: 35px;
 
-    padding: 30px 40px;
-    border-radius: 25px;
+    /* สีพื้นการ์ดสดขึ้น */
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f3fbff 50%,
+        #fff5ff 100%
+    );
 
-    background: white;
     position: relative;
 
-    border: 3px solid transparent;
+    border: 4px solid transparent;
     background-image:
-        linear-gradient(rgb(235, 246, 253)),
-        linear-gradient(135deg, #7c4ae8, #39b39c);
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f5fbff
+        ),
+        linear-gradient(
+            135deg,
+            #ff6ec7,
+            #7c4ae8,
+            #39b39c,
+            #ffd166
+        );
+
     background-origin: border-box;
     background-clip: padding-box, border-box;
 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 30px;
+
+    /* เงาสีให้ดู pop */
+    box-shadow:
+        0 15px 35px rgba(124,74,232,0.25),
+        0 8px 20px rgba(57,179,156,0.2);
+
     transition: 0.3s;
 }
 
 .quiz-card.fancy:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+    transform: translateY(-10px) scale(1.02);
+
+    box-shadow:
+        0 20px 45px rgba(255,110,199,0.35),
+        0 15px 35px rgba(57,179,156,0.25);
 }
+
 
 .quiz-icon {
-    width: 75px;
-    height: 75px;
-    font-size: 40px;
-    border-radius: 18px;
-    border-radius: 20px;
+    width: 90px;
+    height: 90px;
+    font-size: 45px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 25px;
 
-    /* เงาสองด้าน ทำให้กล่องดูนิ่ม */
-    box-shadow: 6px 6px 15px rgba(0,0,0,0.1);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.quiz-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 .quiz-content h3 {
-    text-align: center;
-    font-size: 28px;
-    color: #003d6a;
-    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(
+        135deg,
+        #7c4ae8,
+        #39b39c
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .quiz-content p {
@@ -881,21 +959,66 @@ textarea {
 }
 
 .quiz-btn {
-    padding: 10px 24px;
-    background: linear-gradient(135deg, #7c4ae8, #39b39c);
-    color: white;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: 500;
+    padding: 12px 30px;
+    background: linear-gradient(
+        135deg,
+        #ff6ec7,
+        #7c4ae8,
+        #39b39c
+    );
+    color:white;
+    border-radius:30px;
 
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    transition: 0.25s;
+    font-size:15px;
+    font-weight:700;
+
+    box-shadow:
+        0 8px 20px rgba(124,74,232,0.35);
+
+    transition:0.3s;
 }
-
 .quiz-btn:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.18);
-    transform: translateY(-3px);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow:
+        0 15px 30px rgba(255,110,199,0.4);
 }
+
+.news-quiz{
+    display:grid;
+    grid-template-columns:1fr 320px;
+    gap:40px;
+    max-width:1600px;
+    margin:auto;
+    padding:0 30px;
+    align-items:start;
+}
+
+.news-area{
+    width:100%;
+}
+
+.quiz-area{
+    width:320px;
+    position:sticky;
+    top:120px;
+}
+@media(max-width:992px){
+
+.news-quiz{
+    grid-template-columns:1fr;
+}
+
+.news-grid{
+    grid-template-columns:1fr;
+}
+
+.quiz-area{
+    width:100%;
+    position:static;
+
+}
+}
+
 /*วิจัย*/
 .research-menu {
     padding: 60px 10%;
@@ -1232,6 +1355,7 @@ textarea {
 
 /* personal */
 .personnel-section {
+    height: 220px;
     padding: 40px 0;
     background: #0B6149;
     background-size: cover;
@@ -1249,14 +1373,14 @@ textarea {
 }
 
 .personnel-left{
-    height: 200px;
+    height: 160px;
     display: flex;
     justify-content: center;
 }
 /* ซ้าย - รูปใหญ่ */
 .personnel-left img {
     width: 50%;
-    height:200px;
+    height:160px;
     border-radius: 10px;
     object-fit: cover;
     display: block;
@@ -1328,40 +1452,44 @@ display:block;
 
 .alumni-hero {
     background: linear-gradient(135deg,#98c6ff,#b4d1f7);
-    padding: 80px 20px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
     text-align: center;
 }
-
 .alumni-hero h1 {
     font-size: 48px;
     color: #0a2e5c;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .alumni-hero p {
     color: #3c4a5c;
     font-size: 18px;
+    margin: 0;
 }
 
 /* ปุ่ม Alumni */
 .btn-alumni{
     display: inline-block;
     background: linear-gradient(90deg, #1d4764, #6ac6ff);
-    padding: 12px 26px;
-    gap : 15;
+    padding: 10px 20px;      /* ลดขนาดปุ่ม */
     color: white;
-    font-size: 18px;
+    font-size: 16px;         /* ลดขนาดตัวอักษร */
     font-weight: 600;
-    border-radius: 50px;
+    border-radius: 30px;     /* ลดความโค้งเล็กน้อย */
     text-decoration: none;
 
-    box-shadow: 0 6px 15px rgba(76,158,217,0.35);
-    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(76,158,217,0.3);
+    transition: all 0.3s ease;
 }
 
 .btn-alumni:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(76,158,217,0.45);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(76,158,217,0.4);
 }
 
 /* ===================================================================

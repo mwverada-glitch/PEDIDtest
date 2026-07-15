@@ -2,10 +2,13 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>Viral infections</title>
-<link rel="stylesheet" href="style.css">
+<title>Workshop</title>
+<link rel="stylesheet" href="style_14.7.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+<script src="search-data.js"></script>
+<script src="search.js"></script>
 </head>
 <style>
 .dropdown-wrapper {
@@ -20,62 +23,64 @@
     <div class="top-bar">
         <div class="left">สาขาวิชาโรคติดเชื้อ ภาควิชากุมารเวชศาสตร์ คณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่</div>
         <div class="right">
-            <li class="login-btn"><a href="#" onclick="openLoginModal()">เข้าสู่ระบบ</a></li>
-            <li class="register-btn"><a href="#" onclick="openRegisterModal()">ลงทะเบียน</a></li>
-            <button class="lang">TH</button>
-            <button class="lang">EN</button>
+<!-- DEMO BUTTONS -->
+            <button class="btn-primary" onclick="openModal('login')">เข้าสู่ระบบ</button>
+            <button class="btn-primary" onclick="openModal('register')">ลงทะเบียน</button>
         </div>
     </div>
-    
-    <!-- LOGIN POPUP -->
-<div id="loginModal" class="modal">
+<div id="popupModal" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="closeLoginModal()">&times;</span>
 
-        <h2 class="login-title">เข้าสู่ระบบ</h2>
+        <span class="close" onclick="closeModal()">&times;</span>
 
-        <label>อีเมล</label>
-        <input type="email" placeholder="อีเมล">
-
-        <label>รหัสผ่าน</label>
-        <div class="password-box">
-            <input type="password" id="passwordInput" placeholder="รหัสผ่าน">
-            <span class="toggle-eye" onclick="togglePassword()">👁</span>
+        <!-- Tabs -->
+        <div class="tabs">
+            <div id="tabLogin" class="tab active" onclick="switchTab('login')">เข้าสู่ระบบ</div>
+            <div id="tabRegister" class="tab" onclick="switchTab('register')">ลงทะเบียน</div>
         </div>
 
-        <a href="#" class="forgot">ลืมรหัสผ่าน ?</a>
+        <!-- LOGIN FORM -->
+        <div id="loginForm">
 
-        <button class="login-submit">เข้าสู่ระบบ</button>
+            <label>อีเมล</label>
+            <input type="email" placeholder="กรอกอีเมล">
+
+            <label>รหัสผ่าน</label>
+            <div class="password-box">
+                <input type="password" id="loginPass" placeholder="รหัสผ่าน">
+                <span class="toggle-eye" onclick="togglePassword('loginPass')">👁</span>
+            </div>
+
+            <button class="submit-btn">เข้าสู่ระบบ</button>
+        </div>
+
+        <!-- REGISTER FORM -->
+        <div id="registerForm" style="display:none;">
+
+            <label>ชื่อ-นามสกุล</label>
+            <input type="text" placeholder="ชื่อจริง-นามสกุล">
+
+            <label>อีเมล</label>
+            <input type="email" placeholder="กรอกอีเมล">
+
+            <label>รหัสผ่าน</label>
+            <div class="password-box">
+                <input type="password" id="regPass1" placeholder="รหัสผ่าน">
+                <span class="toggle-eye" onclick="togglePassword('regPass1')">👁</span>
+            </div>
+
+            <label>ยืนยันรหัสผ่าน</label>
+            <div class="password-box">
+                <input type="password" id="regPass2" placeholder="ยืนยันรหัสผ่าน">
+                <span class="toggle-eye" onclick="togglePassword('regPass2')">👁</span>
+            </div>
+
+            <button class="submit-btn">ลงทะเบียน</button>
+        </div>
+
     </div>
 </div>
-<!-- REGISTER POPUP -->
-<div id="registerModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeRegisterModal()">&times;</span>
 
-        <h2 class="login-title">ลงทะเบียน</h2>
-
-        <label>ชื่อ-นามสกุล</label>
-        <input type="text" placeholder="ชื่อจริง-นามสกุล">
-
-        <label>อีเมล</label>
-        <input type="email" placeholder="อีเมล">
-
-        <label>รหัสผ่าน</label>
-        <div class="password-box">
-            <input type="password" id="regPassword" placeholder="รหัสผ่าน">
-            <span class="toggle-eye" onclick="toggleRegisterPassword()">👁</span>
-        </div>
-
-        <label>ยืนยันรหัสผ่าน</label>
-        <div class="password-box">
-            <input type="password" id="regPassword2" placeholder="ยืนยันรหัสผ่าน">
-            <span class="toggle-eye" onclick="toggleRegisterPassword2()">👁</span>
-        </div>
-
-        <button class="login-submit">ลงทะเบียน</button>
-    </div>
-</div>
 <!-- HEADER -->
 <header>
     <div class="logo-area">
@@ -87,6 +92,7 @@
             <img src="S__55492628.jpg" alt="PED Unit">
         </div>
     </div>
+
     <nav class="menu">
 
         <a href="index.html">HOME</a>
@@ -109,13 +115,12 @@
             <a class="dropdown-link">CONTENT ▾</a>
             <ul class="dropdown-menu">
                 <li><a href="Guideline.html">Guideline</a></li>
-                <li><a href="Case Study.html">Case Study</a></li>
 
                 <!-- Submenu -->
                 <li class="has-submenu">
                     <a href="#" class="submenu-toggle">Medical content ▾</a>
                     <ul class="submenu">
-                        <li><a href="Medical content.html">Medical content</a></li>
+                        <li><a href="Medical content.html">Medical Poscast</a></li>
                         <li><a href="info12.5.html">ความรู้ทั่วไป</a></li>
                     </ul>
                 </li>
@@ -140,15 +145,19 @@
             <ul class="dropdown-menu">
                 <li><a href="news.html">NEWS</a></li>
                 <li><a href="Event.html">EVENTS</a></li>
-                <li><a href="News3.html">ประกาศ / ดาวน์โหลด</a></li>
             </ul>
         </div>
 
-        <a href="contact.html">CONTACT US</a>
+        <a href="#contact">CONTACT US</a>
         <span class="search">🔍</span>
-
+        <div class="search-bar" id="searchBar">
+            <input type="text" id="searchInput" placeholder="พิมพ์เพื่อค้นหา...">
+            <button type="button" id="searchBtn">ค้นหา</button>
+            <div id="searchResults"></div>
+        </div>
     </nav>
 </header>
+
 <style>
 /* สี */
 .pink { background-color: plum; }
@@ -166,18 +175,28 @@
 }
 .related-section {
     padding: 60px 40px;
-    background: #f5fbff;
     text-align: center;
-    font-family: "Prompt"
-    
+
 }
 
-.related-section h2 {
-    font-size: 32px;
-    font-weight: 600;
-    color: #003d6a;
-    margin-bottom: 40px;
+.related-card {
+    width: 350px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: plum;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.related-card h2 {
+    color: #003d6a;
+    flex-grow: 1;
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
 /* ICON */
 .icon {
     width: 70px;   /* ปรับให้เล็กลง */
@@ -186,20 +205,14 @@
 </style>
 <section class="related-section">
     <h2>Japanese Encephalitis</h2>
-<section class="info-section">
+    <section class="info-section">
     <div class="info-card pink">
         <img src="girl_4225074.png" alt="" class="icon">
         <h2>A 7-year-old girl presented with fever with   
             Lt hemiparesis for 2 days</h2>
         <a href="Interhospital conference_JE CMU_23Feb2024_final.pdf" class="btn-learn">➤ Read more</a>
     </div>
-
-    <div class="info-card teal">
-        <h2>TOPIC</h2>
-        <img src="topic-icon.png" class="icon">
-        <p>something Topic......</p>
-        <a href="topic.html" class="btn-read">➤ Read more</a>
-    </div>
+    </section>
 
 </section>
 
