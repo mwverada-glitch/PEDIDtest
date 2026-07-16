@@ -561,35 +561,78 @@ header{
         width: 100%;
     }
 }
-.icon {
-    display: block;
-    width: fit-content;
-    margin: 0 auto 20px;
-    text-align: center;
+/* เลย์เอาต์เป็นแถวเดียว */
+.info-section{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    width:100%;
+    gap:0;                 /* ให้กล่องติดกัน */
+    margin:40px 0;
+    padding:0;
 }
 
-/* เลย์เอาต์เป็นแถวเดียว */
-.info-section {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 100%;
-    gap: 0;
-}
 
 /* กล่อง */
-.info-card {
-    height: 250px;
-    padding: 30px 40px;
-    color: white;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
+.info-card{
+    min-height:240px;
+    padding:20px 15px;
+    color:white;
+    text-align:center;
+    box-sizing:border-box;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 }
 
+
+/* ลดขนาด icon */
+.icon{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+    margin-bottom:10px;
+}
+
+
 /* สี */
-.pink { background-color: #4D8C8A; }
-.teal { background-color: #8A6F9E; }
-.lightpink { background-color: #C96A2D; }
+.blue{
+    background:#4994a8;
+}
+
+.pink{
+    background:#4D8C8A;
+}
+
+.teal{
+    background:#8A6F9E;
+}
+
+.lightpink{
+    background:#C96A2D;
+}
+
+
+/* ปรับหัวข้อ */
+.info-card h2{
+    font-size:20px;
+    line-height:1.4;
+    margin:10px 0;
+}
+
+
+@media (max-width:1200px){
+    .info-section{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:768px){
+    .info-section{
+        grid-template-columns:1fr;
+    }
+}
 
 /* ปุ่ม */
 .btn-read,
@@ -608,18 +651,6 @@ header{
 .btn-read:hover,
 .btn-learn:hover {
     background: #ffe6ef;
-}
-
-/* section ด้านล่าง */
-.public-section {
-    margin-top: 40px;   /* เพิ่มช่องว่างจาก section ก่อนหน้า */
-}
-
-.public-section .blue {
-    background-color: #4994a8;
-    color: white;
-    padding: 35px 40px;  /* ลดความสูงจาก 60px */
-    text-align: center;
 }
 
 /* icon card */
