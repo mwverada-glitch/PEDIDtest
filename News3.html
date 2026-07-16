@@ -18,68 +18,15 @@
     display: block;
 }</style>
 
-<body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="left">สาขาวิชาโรคติดเชื้อ ภาควิชากุมารเวชศาสตร์ คณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่</div>
-        <div class="right">
-<!-- DEMO BUTTONS -->
-            <button class="btn-primary" onclick="openModal('login')">เข้าสู่ระบบ</button>
-            <button class="btn-primary" onclick="openModal('register')">ลงทะเบียน</button>
-        </div>
-    </div>
-<div id="popupModal" class="modal">
-    <div class="modal-content">
+<div id="header"></div>
 
-        <span class="close" onclick="closeModal()">&times;</span>
-
-        <!-- Tabs -->
-        <div class="tabs">
-            <div id="tabLogin" class="tab active" onclick="switchTab('login')">เข้าสู่ระบบ</div>
-            <div id="tabRegister" class="tab" onclick="switchTab('register')">ลงทะเบียน</div>
-        </div>
-
-        <!-- LOGIN FORM -->
-        <div id="loginForm">
-
-            <label>อีเมล</label>
-            <input type="email" placeholder="กรอกอีเมล">
-
-            <label>รหัสผ่าน</label>
-            <div class="password-box">
-                <input type="password" id="loginPass" placeholder="รหัสผ่าน">
-                <span class="toggle-eye" onclick="togglePassword('loginPass')">👁</span>
-            </div>
-
-            <button class="submit-btn">เข้าสู่ระบบ</button>
-        </div>
-
-        <!-- REGISTER FORM -->
-        <div id="registerForm" style="display:none;">
-
-            <label>ชื่อ-นามสกุล</label>
-            <input type="text" placeholder="ชื่อจริง-นามสกุล">
-
-            <label>อีเมล</label>
-            <input type="email" placeholder="กรอกอีเมล">
-
-            <label>รหัสผ่าน</label>
-            <div class="password-box">
-                <input type="password" id="regPass1" placeholder="รหัสผ่าน">
-                <span class="toggle-eye" onclick="togglePassword('regPass1')">👁</span>
-            </div>
-
-            <label>ยืนยันรหัสผ่าน</label>
-            <div class="password-box">
-                <input type="password" id="regPass2" placeholder="ยืนยันรหัสผ่าน">
-                <span class="toggle-eye" onclick="togglePassword('regPass2')">👁</span>
-            </div>
-
-            <button class="submit-btn">ลงทะเบียน</button>
-        </div>
-
-    </div>
-</div>
+<script>
+fetch("header.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("header").innerHTML = data;
+});
+</script>
 
 <!-- HEADER -->
 <header>

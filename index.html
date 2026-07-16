@@ -25,15 +25,6 @@
 </head>
 
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="left">สาขาวิชาโรคติดเชื้อ ภาควิชากุมารเวชศาสตร์ คณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่</div>
-        <div class="right">
-<!-- DEMO BUTTONS -->
-            <button class="btn-primary" onclick="openModal('login')">เข้าสู่ระบบ</button>
-            <button class="btn-primary" onclick="openModal('register')">ลงทะเบียน</button>
-        </div>
-    </div>
 <div id="popupModal" class="modal">
     <div class="modal-content">
 
@@ -87,68 +78,98 @@
     </div>
 </div>
 
-    <!-- Main Menu -->
-<header>
-    <div class="logo-area">
+<div class="logo-area">
+
+    <div class="logo-group">
         <div class="logo-circle">
-            <img src="OIP2.webp" alt="PED CMU">
+            <img src="OIP2.webp" alt="">
         </div>
 
         <div class="logo-round">
-            <img src="S__55492628.jpg" alt="PED Unit">
+            <img src="S__55492628.jpg" alt="">
+        </div>
+
+        <div class="title-area">
+            <h2>PEDIATRIC INFECTIOUS DISEASES UNIT</h2>
+            <p>Faculty of Medicine, Chiang Mai University</p>
         </div>
     </div>
 
-        <nav class="menu">
-            <a href="#">HOME</a>
-            <div class="dropdown-wrapper">
-            <!-- ABOUT US DROPDOWN -->
-            <div class="dropdown-wrapper">
-                <a href="#" id="aboutMenu">ABOUT US ▾</a>
-                <ul id="aboutDropdown" class="dropdown-menu">
-                    <li><a href="public.html">สาขาวิชาโรคติดเชื้อ</a></li>
-                    <li><a href="aboutuscenter.html">PREVENT ID CENTER</a></li>
-                    <li><a href="aboutussite.html">เว็บไซต์ที่เกี่ยวข้อง</a></li>
+    <div class="button-group">
+        <button class="btn-primary" onclick="openModal('login')">เข้าสู่ระบบ</button>
+        <button class="btn-primary" onclick="openModal('register')">ลงทะเบียน</button>
+    </div>
+
+</div>
+
+<nav class="menu">
+
+    <a href="#">HOME</a>
+
+    <!-- ABOUT US -->
+    <div class="dropdown-wrapper">
+        <a href="#" id="aboutMenu">ABOUT US ▾</a>
+
+        <ul id="aboutDropdown" class="dropdown-menu">
+            <li><a href="public.html">สาขาวิชาโรคติดเชื้อ</a></li>
+            <li><a href="#linkศูนย์">PREVENT ID CENTER</a></li>
+            <li><a href="aboutussite.html">เว็บไซต์ที่เกี่ยวข้อง</a></li>
+            <li><a href="ouralumni.html">Our Alumni</a></li>
+        </ul>
+    </div>
+
+    <!-- OUR TEAM -->
+    <a href="personal.html">OUR TEAM ▾</a>
+
+    <!-- CONTENT -->
+    <div class="dropdown-wrapper">
+
+        <a href="#" id="contentMenu">CONTENT ▾</a>
+
+        <ul id="contentDropdown" class="dropdown-menu">
+
+            <li><a href="Guideline.html">Guideline</a></li>
+
+            <li class="has-submenu">
+
+                <a href="#" class="submenu-toggle">Medical content</a>
+
+                <ul class="submenu">
+                    <li><a href="Medical content.html">Medical Podcast</a></li>
+                    <li><a href="Vdio.html">วิดิโอความรู้สำหรับประชาชน</a></li>
+                    <li><a href="info12.5.html">บทความสำหรับประชาชน</a></li>
                 </ul>
-            </div>
-            <a href="personal.html">OUR TEAM ▾</a>
 
-            <a href="#" id="contentMenu">CONTENT ▾</a>
-                <ul id="contentDropdown" class="dropdown-menu">
-                    <li><a href="Guideline.html">Guideline</a></li>
-                <li class="has-submenu">
-                    <a href="#" class="submenu-toggle">Medical content</a>
+            </li>
 
-                    <ul class="submenu">
-                        <li><a href="Medical content.html">Medical Podcast</a></li>
-                        <li><a href="Vdio.html">วิดิโอความรู้สำหรับประชาชน</a></li>
-                        <li><a href="info12.5.html">บทความสำหรับประชาชน</a></li>
-                    </ul>
-                </li>
-                    <li><a href="Workshop.html">Education Training</a></li>
-                </ul>
-            </div>
-            <a href="#RESEARCH">RESEARCH ▾</a>
+            <li><a href="Workshop.html">Education Training</a></li>
 
-            <!-- NEWS / EVENTS DROPDOWN MENU -->
-            <div class="dropdown-wrapper">
-                <a href="#" id="newsMenu">NEWS / EVENTS ▾</a>
-                <ul id="newsDropdown" class="dropdown-menu">
-                    <li><a href="#newsevent">NEWS</a></li>
-                    <li><a href="Event.html">EVENTS</a></li>
-                </ul>
-            </div>
+        </ul>
 
-            <a href="#contact">CONTACT US</a>
-            <span class="search">🔍</span>
-            <div class="search-bar" id="searchBar">
-                <input type="text" id="searchInput" placeholder="พิมพ์เพื่อค้นหา...">
-                <button type="button" id="searchBtn">ค้นหา</button>
-                <div id="searchResults"></div>
-            </div>
-        </nav>
-    </header>
-     
+    </div>
+
+    <!-- RESEARCH -->
+    <a href="#RESEARCH">RESEARCH ▾</a>
+
+    <!-- NEWS -->
+
+
+    <a href="Event.html" >NEWS / EVENTS ▾</a>
+
+    <!-- CONTACT -->
+    <a href="contact.html">CONTACT US</a>
+
+    <!-- SEARCH -->
+    <span class="search">🔍</span>
+
+    <div class="search-bar" id="searchBar">
+        <input type="text" id="searchInput" placeholder="พิมพ์เพื่อค้นหา...">
+        <button type="button" id="searchBtn">ค้นหา</button>
+        <div id="searchResults"></div>
+    </div>
+
+</nav>
+
 
      <!-- Hero Section -->
 <!-- HERO SLIDER -->
@@ -398,7 +419,7 @@
     </div>
     <div class="info-card lightpink">
         <img src="clinical-trials_18465548.png" class="icon">
-        <h2>interesting Case<br>เคสทางคลินิกที่น่าสนใจ</h2>
+        <h2>Interesting Case<br>เคสทางคลินิกที่น่าสนใจ</h2>
         <a href="interesting.html" class="btn-read">➤ Read more</a>
     </div>
 </section>
@@ -474,16 +495,6 @@
     </div>
 </section>
 
-<section class="alumni-hero">
-    <div class="alumni-hero-content">
-        <h1>Our Alumni</h1>
-        <p>รายชื่อศิษย์เก่าที่เคยร่วมงานและสร้างผลงานร่วมกับทีมของเรา</p>
-
-        <a href="ouralumni.html" class="btn-alumni">
-            คลิกเพื่อดูรายชื่อ
-        </a>
-    </div>
-</section>
 
 <section id="contact" class="contact-section">
 
@@ -526,8 +537,10 @@
 
         <!-- RIGHT INFO -->
         <div class="contact-info">
+            <h3>ติดต่อเรา</h3>
             <p>
-                สาขาวิชาโรคติดเชื้อ ภาควิชากุมารเวชศาสตร์ คณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่<br>
+                สาขาวิชาโรคติดเชื้อ ภาควิชากุมารเวชศาสตร์ <br>
+                คณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่<br>
 
             </p>
             <p>
@@ -535,27 +548,29 @@
                 ต.ศรีภูมิ อ.เมือง จ.เชียงใหม่ 50200
             </p>
             <p>โทรศัพท์/โทรสาร 053936470</p>
+        
 
-            <h3>ติดต่อเรา</h3>
-
-            <div class="social-icons">
-                <a href="https://www.facebook.com/ชื่อเพจหรือโปรไฟล์" target="blank">
-                    <img src="facebook-social-media-icon-design-template-vector-22339895.webp" alt="Facebook">
-                </a>
-                <a href="mailto:example@email.com">
-                    <img src="1657906274logo-gmail-png.webp" alt="Email">
-                </a>
-                <a href="https://line.me/ti/p/ไอดีไลน์" target="blank">
-                    <img src="LINE_New_App_Icon_(2020-12).png" alt="Line">
-                 </a>
-            </div>
-
-            <div class="logo-round">
-                <img src="S__55492628.jpg" alt="PED Unit">
-            </div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-line"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
         </div>
 
+        <div class="logo-round">
+            <img src="S__55492628.jpg" alt="">
+        </div>
     </div>
+
+
+    
+
+
+
+
+
+
+
 </section>
 <script>
 /* --- OPEN MODAL --- */

@@ -164,38 +164,11 @@ body {
         background: linear-gradient(135deg, #6f79ff, #8f85ff);
         box-shadow: 0 4px 15px rgba(111, 121, 255, 0.4);
     }
-body {
-    background: #f8f8f8;
-}
-
-/* Top Bar */
-
-.top-bar{
-    background: #7d65ab;
-    color: white;
-    font-size: 20px;
-    padding:20px 4%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:15px;
-}
-
-/* ปุ่มด้านขวา */
-.top-bar .right button {
-    margin-left: 10px;
-    padding: 10px 18px;
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
 
 /* ปุ่ม login/register */
 .btn-primary {
-    background: #ffffff;
-    color: #5e458c;
+    background: #5e458c;
+    color: #ffff;
     border: none;
     padding: 10px 22px;
     border-radius: 10px;
@@ -223,38 +196,25 @@ body {
     background: rgba(255, 255, 255, 0.35);
 }
 
-.top-bar .lang:hover {
-    background: #e9dbff;
-}
 
 header{
-    background: #17765b;
-    padding:12px 4%;
+    padding:0;
+    margin:0;
+}
+
+.logo-area{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    flex-wrap:wrap;
-    gap:20px;
-}
-.top-bar,
-nav,
-header,
-.navbar {
-    position: relative !important;
-    z-index: 10 !important;
+    padding:20px 30px;
+    background:#fff;
+    gap:10px;
 }
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 6px 0;
-}
 
 .logo-circle {
-    width:clamp(50px,6vw,90px);
-    height:clamp(50px,6vw,90px);
+    width:clamp(40px,6vw,90px);
+    height:clamp(40px,6vw,90px);
     border-radius: 50%;
     padding: 6px;
     display: flex;
@@ -271,9 +231,8 @@ header,
 }
 
 .logo-round {
-    width: clamp(90px, 10vw, 130px);
+    width: clamp(130px, 12vw, 130px);
     padding: 6px;
-    margin-top: 10px;
     background: white;
     border-radius: 20px;
     overflow: hidden;
@@ -287,26 +246,53 @@ header,
     height: 100%;
     object-fit: contain;
 }
+.logo-group{
+    display:flex;
+    align-items:center;
+    gap:10px;      /* ระยะระหว่างโลโก้ */
+}
+.button-group{
+    display:flex;
+    gap:10px;
+}
 
+.title-area{
+    margin-left:5px;
+}
+
+.title-area h2{
+    margin:0;
+    font-size:28px;
+    color:#5b4799;
+    font-weight:700;
+}
+
+.title-area p{
+    margin:5px 0 0;
+    font-size:15px;
+    color:#666;
+}
 /* Menu */
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.menu{
+    width:100%;
+    background:#17765b;
+    height:60px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+
+    padding:0 4%;
+    box-sizing:border-box;
 }
 
-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
+.menu a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
 }
-
-nav .search {
-    font-size: 20px;
-    cursor: pointer;
-    color: white;
-}
-
 /* Hero */
 
 .heroSwiper{
@@ -331,37 +317,53 @@ nav .search {
     position: relative;
     z-index: 1;
 }
-.search-bar {
-    display: none; 
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 15px 0;
+
+/* Search Box */
+.search-bar{
+    display:none;
+    position:absolute;
+    top:70px;          /* อยู่ใต้เมนู */
+    right:4%;
+    background:#fff;
+    padding:12px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    align-items:center;
+    gap:10px;
+    z-index:999;
+}
+.search-bar input{
+    width:220px;
+    padding:10px 15px;
+    border:2px solid #54a3bc;
+    border-radius:25px;
+    outline:none;
+    font-size:15px;
 }
 
-.search-bar input {
-    width: 220px; /* ปรับขนาดให้พอดี */
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 25px;
-    border: 2px solid #54a3bc;
-    outline: none;
+.search-bar button{
+    padding:10px 18px;
+    background:#54a3bc;
+    color:#fff;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
 }
 
-.search-bar button {
-    padding: 10px 20px;
-    background: #54a3bc;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+.search-bar button:hover{
+    background:#3d8fa8;
 }
 
-.search-icon {
-    cursor: pointer;
-    font-size: 20px;
-    margin-left: 10px;
+.search{
+    cursor:pointer;
+    font-size:20px;
+    color:#fff;
 }
+
+.search:hover{
+    transform:scale(1.1);
+}
+
 
 /* === ABOUT SECTION (NEW DESIGN) === */
 .about{
@@ -822,21 +824,30 @@ textarea {
     font-size: 20px;
 }
 
-.contact-logo {
-    margin-top: 20px;
-    width: 180px;
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin:25px 0;
 }
 
-.social-icons img {
-    width: 40px;
-    margin-right: 15px;
+.social-icons a{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:#bfb3db;      /* ม่วง */
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:22px;
+    transition:.3s;
 }
 
-.social-icons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+.social-icons a:hover{
+    background:#b794f4;
+    color:#fff;
+    transform:translateY(-3px);
 }
 /*fashcard*/
 .quiz-section {
@@ -1648,47 +1659,6 @@ text-decoration:none;
 display:block;
 }
 
-.alumni-hero {
-    background: linear-gradient(135deg,#98c6ff,#b4d1f7);
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-    text-align: center;
-}
-.alumni-hero h1 {
-    font-size: 48px;
-    color: #0a2e5c;
-    margin-bottom: 5px;
-}
-
-.alumni-hero p {
-    color: #3c4a5c;
-    font-size: 18px;
-    margin: 0;
-}
-
-/* ปุ่ม Alumni */
-.btn-alumni{
-    display: inline-block;
-    background: linear-gradient(90deg, #1d4764, #6ac6ff);
-    padding: 10px 20px;      /* ลดขนาดปุ่ม */
-    color: white;
-    font-size: 16px;         /* ลดขนาดตัวอักษร */
-    font-weight: 600;
-    border-radius: 30px;     /* ลดความโค้งเล็กน้อย */
-    text-decoration: none;
-
-    box-shadow: 0 4px 10px rgba(76,158,217,0.3);
-    transition: all 0.3s ease;
-}
-
-.btn-alumni:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(76,158,217,0.4);
-}
 
 /* ===================================================================
    RESPONSIVE FIXES (เพิ่มเติม)
