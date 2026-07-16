@@ -1019,46 +1019,244 @@ textarea {
 }
 }
 
-/*วิจัย*/
-.research-menu {
-    padding: 60px 10%;
+/*=========================
+        RESEARCH
+==========================*/
+
+.research-menu{
+    padding:90px 8%;
 }
 
-.research-menu h2 {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 40px;
+.research-menu h2{
+    text-align:center;
+    font-size:32px;
+    color:#0f3958;
+    margin-bottom:12px;
+    font-weight:700;
 }
 
-.research-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
+.research-subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+    font-size:18px;
 }
 
-.research-card {
-    display: block;
-    padding: 25px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-decoration: none;
-    color: #333;
-    transition: 0.25s;
-
-    /* ต้องมีอันนี้! เพื่อให้ border-color ทำงาน */
-    border: 5px solid transparent;
+.research-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:28px;
 }
 
-/* สีต่าง ๆ */
-.color1 { border-color: #8dd1b4; }
-.color2 { border-color: #b19cd8; }
-.color3 { border-color: #f4b4d9; }
-.color4 { border-color: #ffd59e; }
+/*=========================
+          CARD
+==========================*/
 
-.research-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+.research-card{
+
+    background:#fff;
+    border-radius:22px;
+
+    padding:38px 28px 28px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#1d1d1d;
+
+    border-top:5px solid;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:320px;
+}
+
+.research-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.15);
+}
+
+/*=========================
+       ICON
+==========================*/
+
+.icon-circle{
+
+    width:95px;
+    height:95px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:30px;
+
+    margin-bottom:28px;
+}
+
+/*=========================
+       TEXT
+==========================*/
+
+.research-card h3{
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+    font-weight:700;
+}
+
+.research-card p{
+
+    color:#666;
+
+    line-height:1.6;
+
+    font-size:16px;
+
+    margin-bottom:30px;
+}
+
+/*=========================
+      BOTTOM
+==========================*/
+
+.card-bottom{
+
+    border-top:1px solid #ededed;
+
+    padding-top:22px;
+}
+
+.arrow-btn{
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    color:#fff;
+
+    transition:.3s;
+}
+
+.research-card:hover .arrow-btn{
+
+    transform:scale(1.12);
+}
+
+/*=========================
+        COLORS
+==========================*/
+
+.color1{
+
+    border-color:#59c5aa;
+}
+
+.color1 h3,
+.color1 i{
+
+    color:#094535;
+}
+
+.color1 .icon-circle{
+
+    background:#e8fbf5;
+}
+
+.color1 .arrow-btn{
+
+    background:#20a67c;
+}
+
+/*-------------*/
+
+.color2{
+
+    border-color:#b49be6;
+}
+
+.color2 h3,
+.color2 i{
+
+    color:#30245c;
+}
+
+.color2 .icon-circle{
+
+    background:#f3edff;
+}
+
+.color2 .arrow-btn{
+
+    background:#6d58b9;
+}
+
+/*-------------*/
+
+.color3{
+
+    border-color:#f3a7d2;
+}
+
+.color3 h3,
+.color3 i{
+
+    color:#a03376;
+}
+
+.color3 .icon-circle{
+
+    background:#fff0f8;
+}
+
+.color3 .arrow-btn{
+
+    background:#d95ba5;
+}
+
+/*-------------*/
+
+.color4{
+
+    border-color:#ffcb8d;
+}
+
+.color4 h3,
+.color4 i{
+
+    color:#b76207;
+}
+
+.color4 .icon-circle{
+
+    background:#fff6eb;
+}
+
+.color4 .arrow-btn{
+
+    background:#f08b1f;
 }
 
 .navbar {
