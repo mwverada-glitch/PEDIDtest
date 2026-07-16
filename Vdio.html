@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>quiz_test</title>
+<title>Medical Content</title>
 <link rel="stylesheet" href="style_14.7.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -160,231 +160,135 @@
 
 <style>
 
-body{font-family:Arial,sans-serif;background:#0d0d10}
-.quiz-flashcard{width:650px;max-width:95%;margin:30px auto;perspective:1200px;position:relative;min-height:760px}
-.card{position:absolute;top:0;left:0;width:100%;background:#fff;padding:24px;border-radius:24px;box-shadow:0 10px 25px rgba(0,0,0,.15);backface-visibility:hidden;transition:.7s}
-.back{transform:rotateY(180deg);text-align:center}
-.flip .front{transform:rotateY(-180deg)}
-.flip .back{transform:rotateY(0)}
-.progress{height:10px;background:#eee;border-radius:99px;overflow:hidden;margin-bottom:15px}
-.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#7c4ae8,#39b39c);transition:.4s}
-.question-number{font-weight:bold;color:#666;margin:10px 0}
-.icon{width:100%;border-radius:18px;margin-bottom:15px}
-.choices{display:flex;flex-direction:column;gap:10px}
-.choice{padding:12px;border-radius:14px;border:2px solid #c8b9ff;background:#efeaff;cursor:pointer;color:#000;  }
-.choice.selected{background:#c6ffe5;border-color:#39b39c}
-button{padding:12px 24px;border:none;border-radius:25px;background:linear-gradient(135deg,#7c4ae8,#39b39c);color:#fff;cursor:pointer;margin-top:18px}
-.explanation{display:none;margin-top:15px;background:#f8f8ff;padding:15px;border-left:5px solid #7c4ae8;text-align:left;border-radius:10px}
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #eaf6ff, #ffeef5);
+  }
+  .container {
+    max-width: 1000px;
+    margin: 30px auto 0; /* เพิ่มระยะห่างจาก header */
+    padding: 30px 20px;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #7cc6ff, #ffb3d1);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+
+  .header h1 {
+    margin: 0;
+    font-size: 30px;
+    text-align: center;
+
+  }
+
+  .section {
+    margin-bottom: 35px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #003d6a;
+  }
+
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    transition: 0.2s;
+    border-left: 6px solid #7cc6ff;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+  }
+
+  .card h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+  }
+
+  .card p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+  }
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+  .podcast {
+  border-left: 6px ;
+}
+
+/* สีการ์ด podcast แบบพาสเทล (เปลี่ยนใหม่เป็นสดใสกว่าเดิม) */
+.section .card.podcast:nth-of-type(2) { background: #e0f4ff; }
+.section .card.podcast:nth-of-type(3) { background: #e8ffe0; }
+.section .card.podcast:nth-of-type(4) { background: #fff7d6; }
+.section .card.podcast:nth-of-type(5) { background: #f3e0ff; }
+.section .card.podcast:nth-of-type(6) { background: #ffe7d6; }
+.section .card.podcast:nth-of-type(7) { background: #ffe0e9; }
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .card-link:hover .card {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+
 </style>
-
+</head>
 <body>
-<div class="quiz-flashcard">
-<div class="card front">
-<div class="progress"><div class="progress-bar"></div></div>
-<div class="question-number"></div>
-<img class="icon">
-<h3 class="question"></h3>
-<div class="choices"></div>
-<button class="next-btn">Check Answer</button>
+
+
+
+<div class="section">
+  <div class="section-title">🎧 วิดิโอความรู้สำหรับประชาชน</div>
+
+<!-- EP 1 -->
+
+
+<div class="card podcast">
+  <h3> ท้องร่วงในเด็ก เรื่องเล็กที่ไม่ควรชะล่าใจ </h3>
+  <p>วิทยากรโดย อ.พญ.ณัฐชยาญ์ คุณานิจถาวร</p>
+  <div class="video-wrapper">
+    <iframe src="ttps://www.youtube.com/live/BLIeNQu0erc" allowfullscreen></iframe>
+  </div>
 </div>
-<div class="card back">
-<h2 class="result-text"></h2>
-<div class="explanation"></div>
-<button class="retry-btn">Next Question</button>
-</div>
-</div>
+
+
+
+
+
+
+
 <script>
-const quizData = [
-{
-    image:"S__56098818.jpg",
-    question:"A 4-month-old infant is brought to the hospital with a left supraclavicular mass. The child has a history of recurrent infections. Physical examination reveals a left supraclavicular mass near the BCG vaccination scar. There is no known exposure to tuberculosis. Which of the following is the most likely causative pathogen?",
-    choices:[
-        "A. <i>Staphylococcus aureus</i>",
-        "B. <i>Mycobacterium tuberculosis</i>",
-        "C. <i>Mycobacterium bovis</i> (BCG strain)",
-        "D. <i>Bartonella henselae</i>",
-        "E. <i>Nocardia asteroides</i>"
-    ],
-    answer:"C",
-    explanation:"BCG lymphadenitis is caused by the BCG vaccine strain of <i>Mycobacterium bovis</i>."
-},
-{
-    image:"messageImage_1782372761096.jpg",
-    question:"Preterm female newborn, GA 35 weeks presented with hepatosplenomegaly and skin rash (as picture). What is the most likely diagnosis?",
-    choices:[
-        "A. Congenital syphilis",
-        "B. Congenital CMV infection",
-        "C. Congenital toxoplasmosis",
-        "D. Congenital herpes infection",
-        "E. Congenital rubella syndrome"
-    ],
-    answer:"A",
-    explanation:"Congenital syphilis."
-}
-];
-
-let current = 0;
-let score = 0;
-let userChoice = null;
-
-const card = document.querySelector(".quiz-flashcard");
-
-loadQuestion();
-
-function loadQuestion(){
-
-    const q = quizData[current];
-
-    document.querySelector(".icon").src = q.image;
-    document.querySelector(".question").textContent = q.question;
-    document.querySelector(".question-number").textContent =
-        `Question ${current + 1} / ${quizData.length}`;
-
-    document.querySelector(".progress-bar").style.width =
-        ((current + 1) / quizData.length * 100) + "%";
-
-    const box = document.querySelector(".choices");
-    box.innerHTML = "";
-
-    q.choices.forEach((choice,index)=>{
-
-        const btn = document.createElement("button");
-
-        btn.className = "choice";
-        btn.innerHTML = choice;
-
-        btn.dataset.choice = String.fromCharCode(65 + index);
-
-        btn.onclick = ()=>{
-
-            document.querySelectorAll(".choice").forEach(c=>{
-                c.classList.remove("selected");
-            });
-
-            btn.classList.add("selected");
-
-            userChoice = btn.dataset.choice;
-
-        }
-
-        box.appendChild(btn);
-
-    });
-
-    document.querySelector(".result-text").textContent="";
-    document.querySelector(".explanation").style.display="none";
-
-}
-
-document.querySelector(".next-btn").onclick = function(){
-
-    if(!userChoice){
-        alert("Please select an answer.");
-        return;
-    }
-
-    const q = quizData[current];
-
-    const result = document.querySelector(".result-text");
-
-    if(userChoice===q.answer){
-
-        score++;
-
-        result.textContent="Correct ✔";
-        result.style.color="#39b39c";
-
-    }else{
-
-        result.textContent="Incorrect ✖";
-        result.style.color="#d9534f";
-
-    }
-
-    const explanation=document.querySelector(".explanation");
-
-    explanation.style.display="block";
-    explanation.textContent=q.explanation;
-
-    card.classList.add("flip");
-
-}
-
-document.querySelector(".retry-btn").onclick = function(){
-
-    card.classList.remove("flip");
-
-    current++;
-
-    userChoice=null;
-
-    if(current >= quizData.length){
-
-        document.querySelector(".front").style.display="none";
-        document.querySelector(".back").style.transform="rotateY(0deg)";
-
-        document.querySelector(".result-text").innerHTML=
-        `🎉 Quiz Completed!<br><br>Your Score<br><br>${score} / ${quizData.length}`;
-
-        document.querySelector(".explanation").style.display="none";
-
-        this.textContent="Restart Quiz";
-
-        this.onclick=restartQuiz;
-
-        return;
-    }
-
-    loadQuestion();
-
-}
-
-function restartQuiz(){
-
-    current=0;
-    score=0;
-    userChoice=null;
-
-    document.querySelector(".front").style.display="block";
-
-    this.textContent="Next Question";
-
-    this.onclick=function(){
-
-        card.classList.remove("flip");
-
-        current++;
-
-        userChoice=null;
-
-        if(current>=quizData.length){
-
-            document.querySelector(".front").style.display="none";
-
-            document.querySelector(".result-text").innerHTML=
-            `🎉 Quiz Completed!<br><br>Your Score<br><br>${score} / ${quizData.length}`;
-
-            document.querySelector(".explanation").style.display="none";
-
-            this.textContent="Restart Quiz";
-
-            this.onclick=restartQuiz;
-
-            return;
-
-        }
-
-        loadQuestion();
-
-    };
-
-    card.classList.remove("flip");
-
-    loadQuestion();
-
-}
-
-
 function openModal(mode) {
     document.getElementById("popupModal").style.display = "flex";
     switchTab(mode);
@@ -436,6 +340,7 @@ window.onclick = function(event) {
     if (event.target === loginModal) loginModal.style.display = "none";
     if (event.target === regModal) regModal.style.display = "none";
 };
+
 /*search*/
 document.querySelector(".search").addEventListener("click", function() {
     let box = document.getElementById("searchBar");
@@ -451,7 +356,7 @@ function searchFunction() {
     alert("ค้นหา: " + keyword);
 }
 
-
 </script>
 
-</body></html>
+</body>
+</html>
