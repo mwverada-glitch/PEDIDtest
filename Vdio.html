@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>Medical Content</title>
+<title>วิดีโอสู่ประชาชน</title>
 <link rel="stylesheet" href="style_14.7.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -186,50 +186,52 @@
 
   }
 
-  .section {
+.section {
+    margin-top: 40px;
     margin-bottom: 35px;
-  }
-
-  .section-title {
+}
+.section-title {
     font-size: 20px;
-    margin-bottom: 15px;
     font-weight: bold;
     color: #003d6a;
-  }
+    margin-bottom: 25px;   /* เดิม 15px */
+}
 
-  .card {
+.card {
     background: white;
     border-radius: 16px;
-    padding: 18px 20px;
+    padding: 12px 18px 16px;   /* ลดจาก 18px 20px */
     margin-bottom: 15px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
     transition: 0.2s;
     border-left: 6px solid #7cc6ff;
-  }
+}
 
   .card:hover {
     transform: translateY(-3px);
   }
 
-  .card h3 {
-    margin: 0 0 6px;
-    font-size: 17px;
-  }
+.card h3 {
+    margin: 0 0 8px;
+    padding-top: 6px;
+    font-size: 18px;
+    line-height: 1.4;
+}
 
-  .card p {
-    margin: 0;
+.card p {
+    margin: 0 0 12px;
+    font-size: 15px;
     color: #555;
-    font-size: 14px;
-  }
+}
 
 .video-wrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 */
-  border-radius: 15px;
-  overflow: hidden;
-  margin-top: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative;
+    width: 100%;
+    padding-bottom: 48%;   /* เดิม 56.25% */
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .video-wrapper iframe {
@@ -263,31 +265,33 @@
   }
 
 </style>
-</head>
-<body>
 
+<body>
 
 
 <div class="section">
   <div class="section-title">🎧 วิดิโอความรู้สำหรับประชาชน</div>
 
-<!-- EP 1 -->
-
-
+ <!-- EP 1 -->
 <div class="card podcast">
-  <h3> ท้องร่วงในเด็ก เรื่องเล็กที่ไม่ควรชะล่าใจ </h3>
-  <p>วิทยากรโดย อ.พญ.ณัฐชยาญ์ คุณานิจถาวร</p>
-  <div class="video-wrapper">
-    <iframe src="ttps://www.youtube.com/live/BLIeNQu0erc" allowfullscreen></iframe>
-  </div>
+    <h3>ท้องร่วงในเด็ก เรื่องเล็กที่ไม่ควรชะล่าใจ</h3>
+    <p>วิทยากรโดย อ.พญ.ณัฐชยาญ์ คุณานิจถาวร</p>
+
+    <div class="video-wrapper">
+     <iframe
+        src="https://www.youtube.com/embed/BLIeNQu0erc"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+        </iframe>
+    </div>
 </div>
 
 
-
-
-
-
-
+<!-- TikTok Embed Script -->
+<script async src="https://www.tiktok.com/embed.js"></script>
 
 
 <script>
