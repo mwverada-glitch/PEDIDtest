@@ -165,6 +165,63 @@ body {
         box-shadow: 0 4px 15px rgba(111, 121, 255, 0.4);
     }
 
+
+
+/* Medical Content */
+.has-submenu{
+    position:relative;
+}
+
+.submenu{
+    display:none;
+    position:absolute;
+    left:100%;
+    top:0;
+
+    width:280px;
+    background:#66b8ba;
+
+    list-style:none;
+    padding:0;
+    margin:0;
+
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+/* เปิดเมื่อ hover */
+.has-submenu:hover > .submenu{
+    display:block;
+}
+
+/* ลิงก์ */
+.submenu li a{
+    display:block;
+    padding:16px 20px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.submenu li a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+/* หัวข้อ */
+.submenu-title{
+    padding:14px 20px 8px;
+    font-size:14px;
+    font-weight:700;
+    color:#dff9ff;
+    background:#5aaeb0;
+}
+
+/* เส้นแบ่ง */
+.submenu-divider{
+    height:1px;
+    background:rgba(255,255,255,.25);
+}
 /* ปุ่ม login/register */
 .btn-primary {
     background: #5e458c;
@@ -241,10 +298,11 @@ header{
     justify-content: center;
 }
 
-.logo-round img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.logo-round img{
+    width:110%;
+    height:110%;
+    object-fit:contain;
+    transform:scale(1.08);
 }
 .logo-group{
     display:flex;
@@ -1534,10 +1592,10 @@ textarea {
     text-align: center;
     position: relative;
 }
-
-.dropdown-wrapper {
-    position: relative;
-    display: inline-block;
+.dropdown-wrapper{
+    position:relative;
+    display:flex;
+    align-items:stretch;
 }
 
 .dropdown-menu {
@@ -1568,7 +1626,18 @@ textarea {
 .dropdown-menu.show {
     display: block;
 }
+.dropdown-link{
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
+    height:60px;
+    padding:0 18px;
+
+    color:#fff;
+    cursor:pointer;
+    user-select:none;
+}
 /* ==== POPUP สีสันสวยงาม ==== */
 .modal {
     display: none;

@@ -29,66 +29,17 @@ fetch("header.html")
 </script>
 
 <style>
-.guideline-section {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    flex-wrap: wrap;
-    padding: 60px 20px;
+.guideline-section{
+    padding:60px 6%;
 }
 
-.guideline-card {
-    flex: 1 1 550px;
-    max-width: 700px;
-    background: #e3f4ff;
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-
-.gd-icon {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.gd-title {
-    font-size: 28px;
-    color: #005a8d;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.gd-detail {
-    font-size: 17px;
-    color: #003d5b;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-.btn-download {
-    display: inline-block;
-    background: #007acc;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.25s;
-}
-
-.btn-download:hover {
-    background: #005b99;
-}
-
-/* กล่องแต่ละหมวด */
+/* กลุ่ม */
 .guide-group{
     width:100%;
     margin-bottom:70px;
 }
 
-/* หัวข้อหมวด */
+/* หัวข้อ */
 .group-title{
     font-size:32px;
     color:#005a8d;
@@ -99,16 +50,83 @@ fetch("header.html")
     font-weight:700;
 }
 
-/* Grid ของการ์ด */
+/* แบ่ง 2 กล่อง */
 .guide-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
-    gap:35px;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
 }
 
-/* การ์ดเต็มพื้นที่ */
+/* การ์ด */
 .guideline-card{
-    max-width:none;
+    background:#e3f4ff;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 6px 15px rgba(0,0,0,.1);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    min-height:580px;   /* ทุกกล่องสูงเท่ากัน */
+}
+
+/* รูป */
+.gd-icon{
+    width:100%;
+    height:300px;       /* ความสูงรูปเท่ากัน */
+    object-fit:cover;   /* ครอบรูปให้เต็ม */
+    border-radius:5px;
+    margin-bottom:20px;
+}
+
+/* ชื่อ */
+.gd-title{
+    font-size:28px;
+    color:#005a8d;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+/* รายละเอียด */
+.gd-detail{
+    font-size:17px;
+    color:#003d5b;
+    line-height:1.6;
+    flex:1;             /* ดันปุ่มลงล่าง */
+}
+
+/* ปุ่ม */
+.btn-download{
+    display:inline-block;
+    margin-top:20px;
+    background:#007acc;
+    color:#fff;
+    padding:12px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.25s;
+}
+
+.btn-download:hover{
+    background:#005b99;
+}
+
+/* Tablet */
+@media (max-width:900px){
+    .guide-grid{
+        grid-template-columns:1fr;
+    }
+
+    .guideline-card{
+        min-height:auto;
+    }
+
+    .gd-icon{
+        height:220px;
+    }
 }
 </style>
 
@@ -133,6 +151,24 @@ fetch("header.html")
                 </p>
 
                 <a href="https://drive.google.com/file/d/1zZi_e6OvcWz_RpuGDn9n9bUT8k4gjhuP/view?usp=sharing"
+                   class="btn-download">
+                    ⬇ Download PDF
+                </a>
+
+            </div>
+
+            <div class="guideline-card">
+
+                <img src="vaccine.png" class="gd-icon" alt="Guideline Icon">
+
+                <h2 class="gd-title">ตารางการสร้างเสริมภูมิคุ้มกันโรค</h2>
+
+                <p class="gd-detail">
+                    <strong>ตารางการสร้างเสริมภูมิคุ้มกันโรคในเด็กและวัยรุ่นไทย</strong><br>
+                    แนะนำโดย สมาคมโรคติดเชื้อในเด็กแห่งประเทศไทย 2569
+                </p>
+
+                <a href="000Tarang  Feb5VX2026 (1).pdf"
                    class="btn-download">
                     ⬇ Download PDF
                 </a>
