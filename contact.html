@@ -1,14 +1,27 @@
+
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<title>Contact Us</title>
-<link rel="stylesheet" href="style_14.7.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
-<script src="search-data.js"></script>
-<script src="search.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PED CMU</title>
+
+    <!-- CSS หลัก -->
+    <link rel="stylesheet" href="style_14.7.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- โหลดฟอนต์ Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Search Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+    <script src="search-data.js"></script>
+    <script src="search.js"></script>
 </head>
 <div id="header"></div>
 
@@ -30,93 +43,192 @@ fetch("header.html")
 }</style>
 
 <!-- CONTACT SECTION -->
-<div class="contact-section">
-    <div class="contact-box">
+<section id="contact" class="contact-section">
 
-        <p>
-            สาขาวิชาโรคติดเชื้อ ภาควิชากุมารเวชศาสตร์ คณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่
-        </p>
+    <div class="contact-container">
 
-        <p>
-            อาคาร บุญสมมาติน ชั้น 6 110 ถ.อินทวโรรส <br>
-            ต.ศรีภูมิ อ.เมือง จ.เชียงใหม่ 50200
-        </p>
+        <!-- LEFT FORM -->
+        <div class="contact-form">
+            <h2>ติดต่อเรา</h2>
 
-        <p>โทรศัพท์/โทรสาร 053936470</p>
+            <form>
 
-        <h3>ติดต่อเรา</h3>
+                <input type="text" placeholder="ชื่อ" required>
+                <input type="text" placeholder="นามสกุล" required>
+                <input type="email" placeholder="อีเมล" required>
+                <input type="text" placeholder="โทรศัพท์">
 
-        <div class="social-icons">
-            <a href="https://www.facebook.com/ชื่อเพจหรือโปรไฟล์" target="_blank">
-                <img src="facebook-social-media-icon-design-template-vector-22339895.webp" alt="Facebook">
-            </a>
+                <select>
+                    <option>ระบุรายละเอียด</option>
+                    <option>สอบถามข้อมูล</option>
+                    <option>ติดต่อหน่วยงาน</option>
+                    <option>อื่น ๆ</option>
+                </select>
 
-            <a href="mailto:example@email.com">
-                <img src="1657906274logo-gmail-png.webp" alt="Email">
-            </a>
+                <input type="text" placeholder="หน่วยงาน">
 
-            <a href="https://line.me/ti/p/ไอดีไลน์" target="_blank">
-                <img src="LINE_New_App_Icon_(2020-12).png" alt="Line">
-            </a>
+                <div class="file-box">
+                    <input type="text" placeholder="แนบไฟล์" class="file-text" disabled>
+                    <label class="file-btn">
+                        เลือกไฟล์
+                        <input type="file" hidden>
+                    </label>
+                </div>
+
+                <textarea placeholder="รายละเอียด"></textarea>
+
+                <button type="submit" class="submit-btn">ตกลง</button>
+
+            </form>
         </div>
 
-        <img src="S__55492628.jpg" class="contact-logo">
+        <!-- RIGHT INFO -->
+        <div class="contact-info">
+            <h3>ติดต่อเรา</h3>
+            <p>
+                สาขาวิชาโรคติดเชื้อ ภาควิชากุมารเวชศาสตร์ <br>
+                คณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่<br>
 
+            </p>
+            <p>
+                อาคาร บุญสมมาติน ชั้น 6 110 ถ.อินทวโรรส <br>
+                ต.ศรีภูมิ อ.เมือง จ.เชียงใหม่ 50200
+            </p>
+            <p>โทรศัพท์/โทรสาร 053936470</p>
+        
+
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-line"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+
+        <div class="logo-round">
+            <img src="S__55492628.jpg" alt="">
+        </div>
     </div>
-</div>
 
+</section>
 <style>
-.contact-section {
-    display: flex;
-    justify-content: center;
-    padding: 40px 0;
-    background: #54a3bc; 
+    .contact-section {
+    background: #7d65ab;
+    padding: 60px 0;
 }
 
-.contact-box {
-    background: #ffffff;
-    padding: 25px;
-    max-width: 900px;
+.contact-container {
     width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    
-    /* ---- ให้อยู่ตรงกลาง ---- */
-    text-align: center;
-}
-
-.contact-box p {
-    margin: 6px 0;
-    color: #444;
-    line-height: 1.5;
-}
-
-.contact-box h3 {
-    margin: 20px 0 15px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* ไอคอนตรงกลาง */
-.social-icons {
+    max-width: 1200px;
+    margin: auto;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 15px;
+    gap: 40px;
 }
 
-.social-icons img {
-    width: 40px;
+.contact-form {
+    flex: 1;
+    background: #7d65ab;
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    border: 3px solid white;
+}
+
+.contact-form h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+}
+
+.file-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.file-text {
+    flex: 1;
+}
+
+.file-btn {
+    background: #D8BFD8;
+    padding: 15px 15px;
+    border-radius: 25px;
+    color: white;
     cursor: pointer;
 }
 
-.contact-logo {
-    display: block;
-    margin: 20px auto 0;
-    width: 120px;
+textarea {
+    height: 120px;
+    border-radius: 15px !important;
+    resize: none;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #D8BFD8;
+    color: white;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: lightblue;
+}
+
+.contact-info {
+    flex: 1;
+    color: white;
+    padding-top: 40px;
+}
+
+.contact-info h3 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin:25px 0;
+}
+
+.social-icons a{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:#bfb3db;      /* ม่วง */
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:22px;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:#b794f4;
+    color:#fff;
+    transform:translateY(-3px);
 }
 </style>
+
+
 <script>
 /*search*/
 document.querySelector(".search").addEventListener("click", function() {
