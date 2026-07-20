@@ -9,6 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
 <script src="search-data.js"></script>
 <script src="search.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <style>
 .dropdown-wrapper {
@@ -28,63 +29,102 @@ fetch("header.html")
 });
 </script>
 
-
-<section class="research-overview">
-
-  <!-- Header -->
-  <div class="overview-header">
-    <h1>Research Overview</h1>
-    <p>ภาพรวมงานวิจัยทั้งหมดของทีม</p>
-  </div>
-
-<div class="stats-modern">
-
-  <div class="stat-item">
-    <div class="icon">📚</div>
-    <h2>65</h2>
-    <p>Publications</p>
-  </div>
-
-  <div class="stat-item">
-    <div class="icon">🧪</div>
-    <h2>2</h2>
-    <p>Ongoing Projects</p>
-  </div>
-
-  <div class="stat-item">
-    <div class="icon">🌍</div>
-    <h2>...</h2>
-    <p>Countries</p>
-  </div>
-
-</div>  
-
   <!-- Research Focus -->
-  <div class="focus-section">
-    <h2>Research Focus Areas</h2>
+<section class="focus-section">
 
-    <div class="focus-grid">
-      <div class="focus-card">
-        <h3>Focus 1  ... </h3>
-        <p>เพิ่มเติม</p>
-      </div>
-
-      <div class="focus-card">
-        <h3>Focus 2  ...</h3>
-        <p>เพิ่มเติม</p>
-      </div>
-
-      <div class="focus-card">
-        <h3>Vaccines</h3>
-        <p>งานวิจัยวัคซีนใหม่ ... </p>
-      </div>
-
+<h2>Research Focus Areas</h2>
+<div class="focus-grid">
+  <div class="focus-card">
+    <div class="focus-icon">
+      <i class="fa-solid fa-droplet"></i> 
     </div>
+    <h3>HIV and blood-borne pathogens</h3>
   </div>
+
+
+  <div class="focus-card">
+    <div class="focus-icon">
+      <i class="fa-solid fa-lungs"></i>
+    </div>
+    <h3>TB and NTM</h3>
+  </div>
+
+
+  <div class="focus-card">
+    <div class="focus-icon">
+      <i class="fa-solid fa-shield-virus"></i>
+    </div>
+    <h3>Antimicrobial Resistant Pathogens</h3>
+  </div>
+
+  <div class="focus-card">
+    <div class="focus-icon">
+      <i class="fa-solid fa-user-shield"></i>
+    </div>
+    <h3>Infections in immunocompromised hosts</h3>
+  </div>
+
+  <div class="focus-card">
+    <div class="focus-icon">
+      <i class="fa-solid fa-mosquito"></i>
+    </div>
+    <h3>Tropical and vector-borne diseases</h3>
+  </div>
+
+  <div class="focus-card">
+    <div class="focus-icon">
+      <i class="fa-solid fa-virus"></i>
+    </div>
+    <h3>Emerging and Re-emerging infectious diseases</h3>
+  </div>
+
+  <div class="focus-card">
+    <div class="focus-icon">
+      <i class="fa-solid fa-syringe"></i>
+    </div>
+    <h3>Vaccines and vaccine-preventable diseases</h3>
+  </div>
+
+  <div class="focus-card">
+    <div class="focus-icon">
+      <i class="fa-solid fa-baby"></i>
+    </div>
+    <h3>Congenital and perinatal infections</h3>
+  </div> 
+
+  <div class="focus-card">
+    <div class="focus-icon">
+      <i class="fa-solid fa-head-side-mask"></i>
+    </div>
+    <h3>Respiratory Viral Infections</h3>
+  </div> 
+
+  <div class="focus-card">
+    <div class="focus-icon">
+      <i class="fa-solid fa-seedling"></i>
+    </div>
+    <h3>Fungal infection</h3>
+  </div> 
+
+  <div class="focus-card">
+    <div class="focus-icon">
+      <i class="fa-solid fa-hand-sparkles"></i>
+    </div>
+    <h3>Infection prevention and control</h3>
+  </div> 
+
+
+
+
+
+</div>
+
+</section>
+
 
   <!-- Buttons -->
   <div class="btn-box">
-    <a href="publications.html" class="btn">View Publications</a>
+    <a href="https://scholars.med.cmu.ac.th/department/Pediatrics" class="btn">View Publications</a>
     <a href="research_projects.html" class="btn outline">View Ongoing Projects</a>
   </div>
 
@@ -92,93 +132,6 @@ fetch("header.html")
 </section>
 
 <style>
-    /* Overall Section */
-.research-overview {
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #eef2ff, #f8f9ff);
-  border-radius: 25px;
-  margin: 30px auto;
-  max-width: 1100px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  font-family: "Prompt", sans-serif;
-}
-
-/* Header */
-.overview-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.overview-header h1 {
-  font-size: 2.3rem;
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
-
-.overview-header p {
-  color: #555;
-  font-size: 1rem;
-}
-
-/* Stats */
-
-.stat-card {
-  background: white;
-  padding: 25px;
-  border-radius: 20px;
-  width: 180px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.stat-card h2 {
-  font-size: 2rem;
-  color: #6c5ce7;
-  margin: 0;
-}
-
-.stat-card p {
-  color: #636e72;
-  margin-top: 8px;
-}
-
-/* Focus Areas */
-.focus-section h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 25px;
-  color: #2c3e50;
-}
-
-.focus-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.focus-card {
-  background: #ffffff;
-  padding: 22px;
-  border-radius: 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: 0.2s;
-}
-
-.focus-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-.focus-card h3 {
-  font-size: 1.2rem;
-  color: #341f97;
-  margin-bottom: 10px;
-}
-
-.focus-card p {
-  color: #555;
-  line-height: 1.5;
-}
 
 /* Buttons */
 .btn-box {
@@ -211,38 +164,80 @@ fetch("header.html")
   background: #6c5ce7;
   color: white;
 }
-.stats-modern {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 40px 0;
-  flex-wrap: wrap;
+
+.focus-section{
+    padding:60px 8%;
 }
 
-.stat-item {
-  width: 220px;
-  padding: 30px 20px;
-  text-align: center;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  transition: 0.25s;
+
+.focus-section h2{
+  font-size:30px;
+    text-align:center;
+    color:#003d6a;
+    margin-bottom:40px;
 }
 
-.stat-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+
+.focus-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
 }
 
-/* Icons */
-.stat-item .icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.5rem;
-  margin-bottom: 12px;
+
+.focus-card{
+    background:white;
+    border-radius:18px;
+    padding:30px 20px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    transition:.3s;
+}
+
+
+.focus-card:hover{
+    transform:translateY(-8px);
+}
+
+
+.focus-icon{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    margin:auto;
+    transition:.3s;
+}
+
+/* สีแต่ละการ์ด */
+.focus-card:nth-child(1) .focus-icon{background:#ffe8e8;color:#d62828;}
+.focus-card:nth-child(2) .focus-icon{background:#e8f4ff;color:#0077b6;}
+.focus-card:nth-child(3) .focus-icon{background:#f2e8ff;color:#7b2cbf;}
+.focus-card:nth-child(4) .focus-icon{background:#e8fff1;color:#2b9348;}
+.focus-card:nth-child(5) .focus-icon{background:#fff3e6;color:#f77f00;}
+.focus-card:nth-child(6) .focus-icon{background:#ffe6f0;color:#d63384;}
+.focus-card:nth-child(7) .focus-icon{background:#e6fff8;color:#00a896;}
+.focus-card:nth-child(8) .focus-icon{background:#eef7ff;color:#4ea8de;}
+.focus-card:nth-child(9) .focus-icon{background:#eaf2ff;color:#4361ee;}
+.focus-card:nth-child(10) .focus-icon{background:#edf7ed;color:#2d6a4f;}
+.focus-card:nth-child(11) .focus-icon{background:#fff8e1;color:#c98c00;}
+
+.focus-card:hover .focus-icon{
+    transform:scale(1.15) rotate(8deg);
+}
+.focus-card h3{
+    color:#003d6a;
+    margin-top:20px;
+    font-size:18px;
+}
+
+
+.focus-card p{
+    color:#666;
+    font-size:14px;
 }
 </style>
 
