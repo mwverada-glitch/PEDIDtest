@@ -10,6 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
 <script src="search-data.js"></script>
 <script src="search.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -48,38 +49,106 @@ fetch("header.html")
         <div class="staff-list">
 
             <div class="staff-card">
-                <img src="doctor1.jpg">
-                <h3>ศ.ดร.พญ.ทวิติยา&nbsp;สุจริตรักษ์</h3>
-                <a href="https://scholars.med.cmu.ac.th/Sudjaritruk/Tavitiya/" class="pdf-link" target="_blank">📄 Publications</a>
+                <img src="AJJ.png">
+                <h3>รศ.ดร.พญ.ทวิติยา&nbsp;สุจริตรักษ์</h3>
+                <a href="https://scholars.med.cmu.ac.th/Sudjaritruk/Tavitiya/" class="publication-btn" target="_blank"><i class="fas fa-book-open"></i> Publications</a>
             </div>
 
             <div class="staff-card">
-                <img src="doctor2.jpg">
+                <img src="morsiprang.jpg">
                 <h3>อ.พญ.สิปาง&nbsp;ปังประเสริฐกุล</h3>
-                <a href="https://scholars.med.cmu.ac.th/Pangprasertkul/Sipang/" class="pdf-link" target="_blank">📄 Publications</a>
-            </div>
+                <a href="https://scholars.med.cmu.ac.th/Pangprasertkul/Sipang/" class="publication-btn" target="_blank"><i class="fas fa-book-open"></i> Publications</a>
+            </div> 
 
             <div class="staff-card">
-                <img src="doctor2.jpg">
+                <img src="mornook.jpg">
                 <h3>อ.พญ.ณัฐชยาญ์&nbsp;คุณานิจถาวร</h3>
-                <a href="https://scholars.med.cmu.ac.th/Kunanitthaworn/Natchaya/" class="pdf-link" target="_blank">📄 Publications</a>
+                <a href="https://scholars.med.cmu.ac.th/Kunanitthaworn/Natchaya/" class="publication-btn" target="_blank"><i class="fas fa-book-open"></i> Publications</a>
             </div>
 
             <div class="staff-card">
-                <img src="doctor2.jpg">
+                <img src="S__76742682.jpg">
                 <h3>อ.พญ.ภัทรานันท์&nbsp;กุศลธรรมรัตน์</h3>
             </div>            
 
         </div>
-        <h2 class="group-title">👨‍⚕️ ผู้ติดต่อประสานงานโคงการวิจัย</h2>
+
+        <h2 class="group-title">📋 ผู้ติดต่อประสานงานโคงการวิจัย</h2>
 
         <div class="staff-list">
 
             <div class="staff-card">
-                <img src="doctor1.jpg">
+                <img src="S__85057619.jpg">
                 <h3>นางสาวอรมัย&nbsp;เหมืองหม้อ</h3>
                 <p>Study Coordinator</p>
             </div>
+        </div>
+
+        <h2 class="group-title">📑 เจ้าหน้าที่ฝ่ายตรวจสอบและควบคุมคุณภาพงานวิจัย</h2>
+
+        <div class="staff-list">
+
+            <div class="staff-card">
+                <img src="S__22700036.jpg">
+                <h3>นางสาวกรรณิการ์&nbsp;บัวสุข</h3>
+                <p>QA Supervisor</p>
+            </div>
+        </div>  
+        
+        <h2 class="group-title">📊 นักจัดการข้อมูล/นักสถิติ</h2>
+
+        <div class="staff-list">
+
+            <div class="staff-card">
+                <img src="wirada.png">
+                <h3>นางสาววีรดา&nbsp;คุณเวช</h3>
+                <p>Data Manager/Biostatistician</p>
+            </div>
+        </div>   
+
+        <h2 class="group-title">👩‍⚕️ พยาบาลวิจัย</h2>
+
+        <div class="staff-list">
+
+            <div class="staff-card">
+                <img src="S__85057619.jpg">
+                <h3>นางสาวอรมัย&nbsp;เหมืองหม้อ</h3>
+                <p>Study Nurse</p>
+            </div>
+        </div>  
+
+        <h2 class="group-title">🗂️ เจ้าหน้าที่สนับสนุนงานวิจัย</h2>
+
+        <div class="staff-list">
+            <div class="staff-card">
+                <img src="1217310.jpg">
+                <h3>นางสาววรวรรณ&nbsp;วงษ์จักร</h3>
+                <p>Research admission</p>
+            </div>
+
+            <div class="staff-card">
+                <img src="piyanuch.png">
+                <h3>นางสาวปิยะนุช&nbsp;ทาสิงห์คำ</h3>
+                <p>Research admission</p>
+            </div>
+
+            <div class="staff-card">
+                <img src="wirada.png">
+                <h3>นางสาววีรดา&nbsp;คุณเวช</h3>
+                <p>Research admission</p>
+            </div>
+        </div>   
+
+        <h2 class="group-title">🔬 เจ้าหน้าที่เทคนิคการแพทย์</h2>
+
+        <div class="staff-list">
+
+            <div class="staff-card">
+                <img src="#">
+                <h3>#</h3>
+                <p>Medical Technologist</p>
+            </div>
+        </div>
     </section>
         
 </section>
@@ -215,6 +284,31 @@ fetch("header.html")
 
     color:#777;
 
+}
+
+.publication-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 25px;
+    background:#0077b6;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    text-decoration:none;
+    border-radius:25px;
+    box-shadow:0 5px 12px rgba(0,119,182,0.25);
+    transition:0.3s;
+}
+
+.publication-btn i{
+    font-size:18px;
+}
+
+.publication-btn:hover{
+    background:#005f8a;
+    transform:translateY(-3px);
+    color:white;
 }
 </style>
 

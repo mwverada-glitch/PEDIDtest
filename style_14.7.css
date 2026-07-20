@@ -597,7 +597,12 @@ header{
 .color3 { border-color: #f4b4d9; }
 .color3 .icon-circle { background: #fde9f3; }
 
-.service-card h3 {
+.color4 { border-color: #f4d7b4; }
+.color4 .icon-circle { background: #fdf8e9; }
+
+.color5 { border-color: #b4e9f4; }
+.color4 .icon-circle { background: #e9f6fd; }
+.servi5e-card h3 {
     font-size: 16px;
     font-weight: 600;
     color: #003d6a;
@@ -729,6 +734,9 @@ header{
 }
 
 
+.lightblue{
+    background:#66c2ff;
+}
 /* ปรับหัวข้อ */
 .info-card h2{
     font-size:20px;
@@ -1037,7 +1045,9 @@ textarea {
             #ff6ec7,
             #7c4ae8,
             #39b39c,
-            #ffd166
+            #ffd166,
+            #66c2ff
+
         );
 
     background-origin: border-box;
@@ -1408,6 +1418,26 @@ textarea {
 .color4 .arrow-btn{
 
     background:#f08b1f;
+}
+
+.color5{
+
+    border-color:#8dceff;
+}
+.color5 h3,
+.color5 i{
+
+    color:#4386a1;
+}
+
+.color5 .icon-circle{
+
+    background:#daecff;
+}
+
+.color5 .arrow-btn{
+
+    background:#4e93bb;
 }
 
 .navbar {
