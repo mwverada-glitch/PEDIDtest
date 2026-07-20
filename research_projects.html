@@ -9,6 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
 <script src="search-data.js"></script>
 <script src="search.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <style>
 .dropdown-wrapper {
@@ -28,235 +29,155 @@ fetch("header.html")
 });
 </script>
 
-<style> 
-.projects-section{
-    padding:80px 8%;
+<section class="research-collab">
+
+    <div class="collab-header">
+        <h2>Research Collaboration</h2>
+        <p>Collaborating with international research networks and organizations</p>
+    </div>
+
+    <div class="collab-grid">
+
+        <div class="collab-card">
+            <div class="collab-icon">
+                <i class="fas fa-university"></i>
+            </div>
+            <h3>NIH</h3>
+            <p>National Institutes of Health</p>
+        </div>
+
+        <div class="collab-card">
+            <div class="collab-icon">
+                <i class="fas fa-microscope"></i>
+            </div>
+            <h3>PENTA-ID</h3>
+            <p>Pediatric European Network</p>
+        </div>
+
+        <div class="collab-card">
+            <div class="collab-icon">
+                <i class="fas fa-globe-asia"></i>
+            </div>
+            <h3>TREAT Asia</h3>
+            <p>Therapeutics Research</p>
+        </div>
+
+        <div class="collab-card">
+            <div class="collab-icon">
+                <i class="fas fa-dna"></i>
+            </div>
+            <h3>NEOSEAP</h3>
+            <p>Asian Pediatric Research Network</p>
+        </div>
+
+        <div class="collab-card">
+            <div class="collab-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <h3>WSPID</h3>
+            <p>World Society for Pediatric Infectious Diseases</p>
+        </div>
+
+    </div>
+
+</section>
+
+<style>.research-collab{
+    padding:60px 8%;
 }
 
-.projects-section .title{
+.collab-header{
     text-align:center;
-    font-size:2.5rem;
-    color:#003d6a;
-    margin-bottom:10px;
-}
-
-.projects-section .subtitle{
-    text-align:center;
-    color:#64748b;
     margin-bottom:40px;
 }
 
-.filter-box{
-    display:flex;
-    justify-content:center;
-    margin-bottom:35px;
+.collab-header h2{
+    color:#003d6a;
+    font-size:32px;
+    margin-bottom:10px;
 }
 
-.filter-box select{
-    padding:12px 18px;
-    border-radius:12px;
-    border:1px solid #dbeafe;
-    background:white;
-    font-size:15px;
+.collab-header p{
+    color:#666;
 }
 
-.project-grid{
+
+.collab-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(5,1fr);
+    gap:25px;
 }
 
-.project-card{
+
+.collab-card{
     background:white;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    overflow:hidden;
-    transition:.3s;
-    display:flex;
-    flex-direction:column;
+    border-radius:18px;
+    padding:30px 15px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
 }
 
-.project-card:hover{
+
+.collab-card:hover{
     transform:translateY(-8px);
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
 }
 
-.card-top{
-    padding:20px 25px;
-    background:linear-gradient(135deg,#c2aaef,#5cc589);
-    color:white;
-}
 
-.project-id{
-    font-size:13px;
-    letter-spacing:1px;
-    opacity:.9;
-}
-
-.project-title{
-    font-size:16px;
-    font-weight:600;
-    margin-top:10px;
-    line-height:1.4;
-}
-
-.card-body{
-    padding:25px;
-}
-
-.project-description{
-    font-size:14px;
-    color:#475569;
-    line-height:1.8;
-    margin-bottom:20px;
-}
-
-.badges{
+.collab-icon{
+    width:80px;
+    height:80px;
+    margin:auto;
+    border-radius:50%;
     display:flex;
-    justify-content:space-between;
-    margin-bottom:20px;
+    align-items:center;
+    justify-content:center;
+    font-size:35px;
+    transition:0.3s;
 }
 
-.tag{
-    background:#ede9fe;
-    color:#4A2C82;
-    padding:6px 12px;
-    border-radius:30px;
+/* NIH */
+.collab-card:nth-child(1) .collab-icon{
+    background:#dff2ff;
+    color:#0077b6;
+}
+
+/* PENTA-ID */
+.collab-card:nth-child(2) .collab-icon{
+    background:#e5f8ed;
+    color:#22a06b;
+}
+
+/* TREAT Asia */
+.collab-card:nth-child(3) .collab-icon{
+    background:#fff0d9;
+    color:#f28c28;
+}
+
+/* NEOSEAP */
+.collab-card:nth-child(4) .collab-icon{
+    background:#eee6ff;
+    color:#6c4ee3;
+}
+
+/* WSPID */
+.collab-card:nth-child(5) .collab-icon{
+    background:#ffe3ec;
+    color:#d63384;
+}
+
+
+.collab-card h3{
+    margin-top:20px;
+    color:#003d6a;
+    font-size:20px;
+}
+
+
+.collab-card p{
     font-size:13px;
-    font-weight:600;
-}
-
-.status{
-    padding:6px 12px;
-    border-radius:30px;
-    font-size:13px;
-    font-weight:600;
-}
-
-.status.recruiting{
-    background:#dcfce7;
-    color:#15803d;
-}
-
-.status.ongoing{
-    background:#dbeafe;
-    color:#1d4ed8;
-}
-
-</style>
-
-
-<section class="projects-section">
-
-<h2 class="title">Ongoing Research Projects</h2>
-
-<p class="subtitle">
-Current clinical studies conducted by the Pediatric Infectious Diseases Unit
-</p>
-
-<div class="filter-box">
-    <select>
-        <option>All Categories</option>
-        <option>Clinical Trial</option>
-        <option>HIV</option>
-        <option>Vaccine</option>
-    </select>
-</div>
-
-<div class="project-grid">
-
-    <!-- Project 1 -->
-    <div class="project-card">
-
-        <div class="card-top">
-            <div class="project-id">PEDID-001</div>
-
-            <h3 class="project-title">
-                Body Fat Distribution in Thai Youth and Young Adults with
-                Perinatally Acquired HIV
-            </h3>
-        </div>
-
-        <div class="card-body">
-
-            <div class="badges">
-                <span class="tag">Clinical Trial</span>
-                <span class="status recruiting">Ongoing</span>
-            </div>
-
-            <p class="project-description">
-                การกระจายตัวของไขมันในร่างกายในเยาวชนและผู้ใหญ่ตอนต้นที่ได้รับเชื้อเอชไอวีจากมารดา
-                ที่เปลี่ยนมาใช้ยาต้านไวรัสสูตรที่ประกอบด้วยยาโดลูเทกราเวียร์
-            </p>
-
-        </div>
-
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-card">
-
-        <div class="card-top">
-            <div class="project-id">PEDID-002</div>
-
-            <h3 class="project-title">
-                Cardiac Morphology and Function in Thai Youth and Young Adults
-                with Perinatally Acquired HIV
-            </h3>
-        </div>
-
-        <div class="card-body">
-
-            <div class="badges">
-                <span class="tag">Clinical Trial</span>
-                <span class="status ongoing">Ongoing</span>
-            </div>
-
-            <p class="project-description">
-                ลักษณะทางกายวิภาคและการทำงานของหัวใจในเยาวชนและผู้ใหญ่ตอนต้นที่ได้รับเชื้อเอชไอวีจากมารดา
-                ที่เปลี่ยนมาใช้ยาต้านไวรัสสูตรที่ประกอบด้วยยาโดลูเทกราเวียร์
-            </p>
-
-        </div>
-
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-card">
-
-        <div class="card-top">
-            <div class="project-id">PEDID-003</div>
-
-            <h3 class="project-title">
-                Maternal immunization with tetanus toxoid,reduced diphtheria toxoid, reduced-dose (2 µg) 
-                recombinant pertussis vaccine (TdaP2gen) and its effect on the immune response to tetanus, 
-                diphtheria and pertussis in Thai infants up to 15-18 months old: An open-label, randomized 
-                controlled trial (M-PRIME study) </h3>
-        </div>
-
-        <div class="card-body">
-
-            <div class="badges">
-                <span class="tag">Clinical Trial</span>
-                <span class="status recruiting">Ongoing</span>
-            </div>
-
-            <p class="project-description">
-                การให้วัคซีนรวมป้องกันโรคบาดทะยัก คอตีบ และไอกรนชนิดไร้เซลล์ที่ผลิตด้วยเทคโนโลยีรีคอมบิแนนท์ ขนาด 2 ไมโครกรัม ในมารดา 
-                และผลกระทบต่อการตอบสนองทางภูมิคุ้มกันต่อ เชื้อบาดทะยัก คอตีบ และไอกรนในเด็กเล็กชาวไทยจนถึงอายุ 15-18 เดือน: การวิจัยแบบสุ่ม ที่มีกลุ่มควบคุมและเปิดฉลา
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-
-
-</div>
-
-</section>
+    color:#777;
+}</style>
 
 <script>
 function openModal(mode) {
