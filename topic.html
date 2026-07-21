@@ -29,240 +29,317 @@ fetch("header.html")
 </script>
 
 <style>
-.news-content {
-    max-width: 800px;
-    margin: 40px auto;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    font-family: "Prompt", sans-serif;
+    /* =========================
+   /* =========================
+   HERO
+========================= */
+.hero {
+    background:#8A6F9E;
+    color:white;
+    padding:45px 20px;   /* ลดจาก 60px */
+    text-align:center;
+    position:relative;
+    overflow:hidden;
 }
 
-.news-content img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 15px;
+.hero::after {
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    opacity:0.05;
+    background-size:cover;
+}
+
+.hero h1 {
+    font-size:40px;
+    margin:0;
+}
+
+.hero p {
+    margin-top:8px;
+    font-size:18px;
+}
+
+/* =========================
+   CATEGORY BUTTONS
+========================= */
+
+.topics {
+    text-align:center;
+    margin-top:35px;      /* ระยะห่างจาก Hero */
+    margin-bottom:60px;   /* ระยะห่างจากกล่อง Card */
+}
+
+.topics button {
+    background:#ffffff;
+    border:2px solid #8A6F9E;
+    color:#0d355d;
+
+    padding:9px 20px;
+    border-radius:30px;
+
+    margin:5px;
+    cursor:pointer;
+
+    font-size:15px;
+    transition:.3s;
+}
+
+.topics button:hover,
+.topics button.active {
+    background:#8A6F9E;
+    color:white;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 320px);
+    justify-content: center;
+    gap: 30px;
+
+    margin-bottom: 80px;   /* เพิ่มตรงนี้ */
+}
+
+.card{
+    width: 320px;
+    height: 420px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    transition: .3s;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover{
+    transform: translateY(-6px);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    object-position:center;
+}
+
+.card-body{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 30px;   /* เพิ่มจาก 20px เป็น 30px */
+    margin-bottom:20px;
+}
+
+.tag{
+    display:inline-block;
+    width:fit-content;
+    background:#8A6F9E;
+    color:#fff;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    margin-top:20px;
+}
+
+.card h3{
+    font-size:20px;
+    color:#0d355d;
+    margin:0 0 10px;
+    line-height:1.4;
+}
+
+.card p{
+    color:#666;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.read-more{
+    margin-top:auto;      /* ดันปุ่มลงล่างสุด */
+}
+
+.read-more a{
+    color:#0d355d;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.read-more a:hover{
+    letter-spacing:.5px;
+}
+
+/* Tablet */
+
+@media (max-width:1100px){
+
+.cards{
+    grid-template-columns:repeat(2,320px);
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:720px){
+
+.cards{
+    grid-template-columns:320px;
+}
+
+.card{
+    width:320px;
+}
+
+}
+
+.hero {
+    height: auto !important;
+    min-height: unset !important;
+    padding: 40px 20px !important;
+    box-sizing: border-box;
+}
+
+.hero h1 {
+    margin: 0 !important;
+    font-size: 40px;
+}
+
+.hero p {
+    margin: 5px 0 0 !important;
+    font-size: 18px;
 }
 </style>
 
-</head>
-<body>
-    <style>
-        /* HERO */
-        .hero {
-            background:#8A6F9E;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0; left: 0;
-            opacity: 0.05;
-            background-size: cover;
-        }
-        .hero h1 {
-            font-size: 46px;
-            margin: 0;
-            position: relative;
-            z-index: 2;
-        }
-        .hero p {
-            margin-top: 10px;
-            font-size: 20px;
-            opacity: 0.9;
-            position: relative;
-            z-index: 2;
-        }
+<!-- HERO -->
+<section class="hero">
+    <h1>Topic Review</h1>
+    <p>บทความและหัวข้อสำคัญด้านโรคติดเชื้อ</p>
+</section>
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 40px auto;
-        }
+<div class="container">
 
-        /* CATEGORY BUTTONS */
-        .topics {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .topics button {
-            background: #ffffff;
-            border: 2px solid #8A6F9E;
-            color: #0d355d;
-            padding: 10px 20px;
-            border-radius: 30px;
-            margin: 5px;
-            cursor: pointer;
-            font-size: 15px;
-            transition: 0.3s;
-        }
-        .topics button:hover {
-            background: #8A6F9E;
-            color: white;
-        }
+    <!-- CATEGORY FILTER -->
+    <div class="topics">
+        <button class="active" onclick="filterCards('ทั้งหมด')">ทั้งหมด</button>
+        <button onclick="filterCards('ไวรัส')">ไวรัส</button>
+        <button onclick="filterCards('แบคทีเรีย')">แบคทีเรีย</button>
+        <button onclick="filterCards('เชื้อรา')">เชื้อรา</button>
+        <button onclick="filterCards('วัณโรค')">วัณโรค</button>
+        <button onclick="filterCards('clinical syndrome')">clinical syndrome</button>
+        
 
-        /* TOPIC CARDS */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+    <!-- TOPIC CARDS -->
+    <div class="cards">
 
-        .card {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            overflow: hidden;
-            transition: 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #8A6F9E;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-bottom: 10px;
-        }
-
-        .card h3 {
-            margin: 10px 0;
-            font-size: 20px;
-            color: #0d355d;
-        }
-
-        .card p {
-            color: #555;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .read-more {
-            margin-top: 10px;
-            display: inline-block;
-            color: #0d355d;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .read-more:hover {
-            letter-spacing: 1px;
-        }
-
-        /* PAGINATION */
-        .pagination {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .pagination button {
-            background: white;
-            border: 2px solid #0d355d;
-            padding: 10px 18px;
-            margin: 5px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .pagination button:hover {
-            background: #0d355d;
-            color: white;
-        }
-
-    </style>
-</head>
-<body>
-
-    <!-- HERO -->
-    <section class="hero">
-        <h1>Topic Review</h1>
-        <p>บทความและหัวข้อสำคัญด้านโรคติดเชื้อ</p>
-    </section>
-
-    <div class="container">
-
-        <!-- CATEGORY FILTER -->
-        <div class="topics">
-            <button>ทั้งหมด</button>
-            <button>ไวรัส</button>
-            <button>แบคทีเรีย</button>
-            <button>เชื้อรา</button>
-            <button>วัคซีน</button>
+        <div class="card" data-category="เชื้อรา">
+            <img src="virus.png" alt="Invasive fungal infection">
+            <div class="card-body">
+                <span class="tag">เชื้อรา</span>
+                <h3>Invasive fungal infection</h3>
+                <p>for pediatric residents</p>
+                <div class="read-more">
+                    <a href="Invasive fungal infection for pediatric residents_29April2026_handout.pdf" target="_blank">
+                        Read more →
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <!-- TOPIC CARDS -->
-        <div class="cards">
-
-            <div class="card">
-                <img src="virus.png">
-                <div class="card-body">
-                    <span class="tag">เชื้อรา</span>
-                    <h3>Invasive fungal infection</h3>
-                    <p>for pediatric residents</p>
-                    <div class="read-more"><a href="Invasive fungal infection for pediatric residents_29April2026_handout.pdf" target="_blank">Read more →</a>
-                    </div>
+        <div class="card" data-category="ไวรัส">
+            <img src="Neonatal.png" alt="Neonatal Herpes">
+            <div class="card-body">
+                <span class="tag">ไวรัส</span>
+                <h3>Neonatal Herpes Simplex Infection</h3>
+                <div class="read-more">
+                    <a href="Topic_neonatal hsv infection.pdf" target="_blank">
+                        Read more →
+                    </a>
                 </div>
             </div>
-
-            <div class="card">
-                <img src="Neonatal.png">
-                <div class="card-body">
-                    <span class="tag">ไวรัส</span>
-                    <h3>Neonatal Herpes Simplex Infection</h3>
-                    
-                    <div class="read-more"><a href="Topic_neonatal hsv infection.pdf" target="_blank">Read more →</a></div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="Extrapulmon.png">
-                <div class="card-body">
-                    <span class="tag">แบคทีเรีย</span>
-                    <h3>Congenital & Extrapulmonary Tuberculosis</h3>
-                    <div class="read-more"><a href="Topic_congenital extrapulmonary tuberculosis.pdf" target="_blank">Read more →</a></div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="antifungal.png">
-                <div class="card-body">
-                    <span class="tag">เชื้อรา</span>
-                    <h3>From Conventional Antifungals to Novel Therapies</h3>
-                    <div class="read-more"><a href="Topic_conventional antifungals to novel therapies.pdf" target="_blank">Read more →</a></div>
-                </div>
-            </div>
-
         </div>
 
-        <!-- PAGINATION 
-        <div class="pagination">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-        </div>  เดี๋ยวรอมีหลายหน้าค่อยเพิ่ม-->
+        <div class="card" data-category="วัณโรค">
+            <img src="Extrapulmon.png" alt="Tuberculosis">
+            <div class="card-body">
+                <span class="tag">วัณโรค</span>
+                <h3>Congenital &amp; Extrapulmonary Tuberculosis</h3>
+                <div class="read-more">
+                    <a href="Topic_congenital extrapulmonary tuberculosis.pdf" target="_blank">
+                        Read more →
+                    </a>
+                </div>
+            </div>
+        </div>
 
+        <div class="card" data-category="เชื้อรา">
+            <img src="antifungal.png" alt="Antifungals">
+            <div class="card-body">
+                <span class="tag">เชื้อรา</span>
+                <h3>From Conventional Antifungals to Novel Therapies</h3>
+                <div class="read-more">
+                    <a href="Topic_conventional antifungals to novel therapies.pdf" target="_blank">
+                        Read more →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-category="แบคทีเรีย">
+            <img src="#" alt="MicroCon">
+            <div class="card-body">
+                <span class="tag">แบคทีเรีย</span>
+                <h3>Staphylococci Coagulase defining GPC</h3>
+                <div class="read-more">
+                    <a href="MicroCon_June 26_Staph_CC (optimized).pdf" target="_blank">
+                        Read more →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- ปิด .cards -->
+
+    <!-- PAGINATION
+    <div class="pagination">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
     </div>
+    -->
+
+</div> <!-- ปิด .container -->
+
 <script>
+
+/* ---------- FILTER TOPICS ---------- */
+function filterCards(category) {
+    const cards = document.querySelectorAll(".card");
+    const buttons = document.querySelectorAll(".topics button");
+
+    // เปลี่ยนสีปุ่ม
+    buttons.forEach(btn => {
+        btn.classList.remove("active");
+
+        if (btn.textContent.trim() === category) {
+            btn.classList.add("active");
+        }
+    });
+
+    // แสดง/ซ่อนการ์ด
+    cards.forEach(card => {
+        if (category === "ทั้งหมด" || card.dataset.category === category) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
 function openModal(mode) {
     document.getElementById("popupModal").style.display = "flex";
     switchTab(mode);
@@ -301,16 +378,11 @@ function switchTab(tab) {
 
 /* --- CLOSE WHEN CLICK OUTSIDE --- */
 window.onclick = function(event) {
-    const modal = document.getElementById("popupModal");
-    if (event.target === modal) closeModal();
-};
+    const popupModal = document.getElementById("popupModal");
+    const loginModal = document.getElementById("loginModal");
+    const regModal = document.getElementById("registerModal");
 
-
-// ----- CLOSE POPUP WHEN CLICK OUTSIDE -----
-window.onclick = function(event) {
-    let loginModal = document.getElementById("loginModal");
-    let regModal = document.getElementById("registerModal");
-
+    if (event.target === popupModal) closeModal();
     if (event.target === loginModal) loginModal.style.display = "none";
     if (event.target === regModal) regModal.style.display = "none";
 };

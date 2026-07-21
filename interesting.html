@@ -9,6 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
 <script src="search-data.js"></script>
 <script src="search.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <style>
 .dropdown-wrapper {
@@ -73,17 +74,12 @@ fetch("header.html")
 }
 
 /* ICON */
-.related-card .icon {
-    width: 65px;
-    margin-bottom: 15px;
-}
 
 /* TITLE */
 .related-card h3 {
     font-size: 20px;
     margin-bottom: 6px;
 }
-
 /* COLORS (สุ่มสีการ์ดละแบบ) */
 .color1 { border-color: #8dd1b4; }
 .color2 { border-color: #b19cd8; }
@@ -91,6 +87,38 @@ fetch("header.html")
 .color4 { border-color: #ffd59e; }
 .color5 { border-color: skyblue; }
 .color6 { border-color: brown; }
+
+
+.related-card .icon {
+    font-size: 55px;
+    display: block;
+    margin: 0 auto 35px;
+}
+
+/* ICON COLORS ตามประเภท */
+.color6 .icon {
+    color: brown; /* Viral infections */
+}
+
+.color1 .icon {
+    color: #8dd1b4; /* Bacterial infections */
+}
+
+.color2 .icon {
+    color: #b19cd8; /* Mycobacterial infections */
+}
+
+.color3 .icon {
+    color: #f4b4d9; /* Fungal infections */
+}
+
+.color4 .icon {
+    color: #ffd59e; /* Parasitic infections */
+}
+
+.color5 .icon {
+    color: #9cc4d8; /* Others / Unusual infections */
+}
 </style>
 
 </head>
@@ -102,34 +130,34 @@ fetch("header.html")
     <div class="related-grid">
 
         <a href="Viral infections.html"target="_blank" class="related-card color1">
-            <img src="pathogen_microbe_epidemic_dangerous_disease_virus_icon_230599.webp" alt="" class="icon">
+            <i class="fa-solid fa-virus icon"></i>
             <h3>Viral infections</h3>
         </a>
 
         <a href="Bacterrial infec.html" target="_blank" class="related-card color2">
-            <img src="bacterial.jpg" alt="" class="icon">
+            <i class="fa-solid fa-bacterium icon"></i>
             <h3>Bacterial infections</h3>
         </a>
 
         <a href="Mycobacterial infec.html" target="_blank" class="related-card color3">
-            <img src="micobacterial.jpg" alt="" class="icon">
+            <i class="fa-solid fa-lungs icon"></i>
             <h3>Mycobacterial infections</h3>
         </a>
 
         <a href="fungal infections.html" target="_blank" class="related-card color4">
-            <img src="fungal.jpg" alt="" class="icon">
+            <i class="fa-solid fa-seedling icon"></i>
             <h3>Fungal infections</h3>
 
         </a>
 
         <a href="parasitic infections.html" target="_blank" class="related-card color5">
-            <img src="parasitic.jpg" alt="" class="icon">
+             <i class="fa-solid fa-dna icon"></i>
             <h3>Parasitic infections</h3>
 
         </a>
 
         <a href="otherinfec.html" target="_blank" class="related-card color6">
-            <img src="pathogen_germ_virus_bacteria_parasite_coronavirus_icon_141071.webp" alt="" class="icon">
+            <i class="fa-solid fa-microscope icon"></i>
             <h3>Others / Unusual infections</h3>
 
         </a>

@@ -602,7 +602,12 @@ header{
 .color4 .icon-circle { background: #fdf8e9; }
 
 .color5 { border-color: #b4e9f4; }
-.color4 .icon-circle { background: #e9f6fd; }
+.color5 .icon-circle { background: #e9f6fd; }
+
+.color6 { border-color: #6a0101; }
+.color6 .icon-circle { background: #fde9e9; }
+
+
 .servi5e-card h3 {
     font-size: 16px;
     font-weight: 600;
@@ -1446,6 +1451,28 @@ textarea {
 
     background:#4e93bb;
 }
+
+.color6{
+
+    border-color:#ff8d8d;
+}
+.color6 h3,
+.color6 i{
+
+    color:#a14643;
+}
+
+.color6 .icon-circle{
+
+    background:#ffdada;
+}
+
+.color6 .arrow-btn{
+
+    background:#bb4e4e;
+}
+
+
 
 .navbar {
     list-style: none;
