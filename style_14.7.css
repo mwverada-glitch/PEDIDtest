@@ -296,11 +296,12 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 3px 10px rgba(124, 74, 232, 0.15);
 }
 
 .logo-round img{
-    width:110%;
-    height:110%;
+    width:135%;
+    height:135%;
     object-fit:contain;
     transform:scale(1.08);
 }
@@ -1817,6 +1818,12 @@ textarea {
 
 /* submenu */
 
+/* เมนูที่มีเมนูย่อย */
+/* ===== เมนูย่อย ===== */
+/* ---------- submenu ---------- */
+
+/* submenu */
+
 .has-submenu{
 position:relative;
 }
@@ -1845,8 +1852,6 @@ text-decoration:none;
 .has-submenu:hover .submenu{
 display:block;
 }
-
-
 /* ===================================================================
    RESPONSIVE FIXES (เพิ่มเติม)
    จุดประสงค์: ให้ layout เท่ากันทุกขนาดจอ + ตัวหนังสือไม่ล้นกรอบ

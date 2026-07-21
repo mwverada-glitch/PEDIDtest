@@ -20,69 +20,104 @@ fetch("header.html")
 });
 </script>
 
-
 <style>
-.dropdown-wrapper {
-    position: relative;
-}
-.dropdown-wrapper:hover .dropdown-menu {
-    display: block;
-}
 /* สี */
-.pink { background-color: rgb(199, 239, 255); }
-.btn-read,
-.btn-learn {
-    display: inline-block;
-    margin-top: 30px;
-    background: white;
-    color: #003d6a;
-    padding: 8px 22px;
-    border-radius: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    border: 2px solid white;
-}
-.related-section {
-    padding: 60px 40px;
-    background: #f5fbff;
-    text-align: center;
-    font-family: "Prompt", sans-serif;
+.related-section{
+    padding:60px 40px;
+    text-align:center;
+    
 }
 
-.related-section h2 {
-    font-size: 32px;
-    font-weight: 600;
-    color: #003d6a;
-    margin-bottom: 40px;
+.related-section h2{
+    color:#003d6a;
+    margin-bottom:35px;
+    font-size:30px;
+
 }
-/* ICON */
-.icon {
-    width: 70px;   /* ปรับให้เล็กลง */
-    height: 70px;  /* หรือเอา height ออกให้ auto */
+
+/* จัดให้ 2 กล่องอยู่คนละฝั่ง */
+.card-group{
+    display:flex;
+    gap:35px;          /* ช่องว่างระหว่างกล่อง */
+}
+
+.info-card{
+    flex:1;
+    min-height:260px;
+    border-radius:20px;
+    padding:35px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+/* สีแต่ละกล่อง */
+.blue{
+    background:#cdefff;
+}
+
+.green{
+    background:#d9f6e8;
+}
+
+/* ไอคอน */
+.icon{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    margin-bottom:18px;
+}
+
+.info-card h2{
+    font-size:24px;
+    color:#003d6a;
+    margin:15px 0;
+}
+
+.btn-learn{
+    margin-top:20px;
+    padding:10px 24px;
+    background:#fff;
+    color:#003d6a;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:600;
 }
 </style>
 <section class="related-section">
-    <h2>Bacterial infectious</h2>
-<section class="info-section">
-    <div class="info-card pink">
-        <img src="student_2611955.png" alt="" class="icon">
-        <h2>...</h2>
-        <p>
-            ....
-        </p>
-        <a href="Interhospital conference_JE CMU_23Feb2024_final.pdf" class="btn-learn">➤ Read more</a>
-    </div>
+    <h2>Bacterial Infections</h2>
 
-    <div class="info-card teal">
-        <h2>TOPIC</h2>
-        <img src="topic-icon.png" class="icon">
-        <p>something Topic......</p>
-        <a href="topic.html" class="btn-read">➤ Read more</a>
-    </div>
+    <div class="card-group">
 
+        <div class="info-card blue">
+            <img src="student_2611955.png" class="icon">
+
+            <h2><em>B. cenocepacia</em> UTI with <em>B. cepacia</em> complex septicemia</h2>
+
+            <a href="PED-ID interesting case GBS-Ecoli-KP meningitis.pdf"
+               class="btn-learn">
+               ➤ Read more
+            </a>
+        </div>
+
+        <div class="info-card green">
+            <img src="#" class="icon">
+
+            <h2><em>Escherichia coli</em>, <em>Klebsiella pneumoniae</em> and <em>Streptococcus agalactiae</em> meningitis</h2>
+
+            <a href="ID interesting case conference_B. cepacia_NK.pdf" class="btn-learn">
+                ➤ Read more
+            </a>
+        </div>
+
+    </div>
 </section>
-
 </body>
 </html>
+
 
 
