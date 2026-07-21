@@ -1493,6 +1493,29 @@ textarea {
     background:#4ebb55;
 }
 
+
+.color8{
+
+    border-color:#ff9c8d;
+}
+.color8 h3,
+.color8 i{
+
+    color:#a14343;
+}
+
+.color8 .icon-circle{
+
+    background:#ffdada;
+}
+
+.color8 .arrow-btn{
+
+    background:#bb534e;
+}
+
+
+
 .navbar {
     list-style: none;
     margin: 0;
