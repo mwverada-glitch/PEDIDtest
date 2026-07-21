@@ -87,7 +87,8 @@ fetch("header.html")
 .color4 { border-color: #ffd59e; }
 .color5 { border-color: skyblue; }
 .color6 { border-color: brown; }
-
+.color7 { border-color: rgb(42, 165, 101); }
+.color8 { border-color: rgb(255, 116, 116); }
 
 .related-card .icon {
     font-size: 55px;
@@ -96,6 +97,14 @@ fetch("header.html")
 }
 
 /* ICON COLORS ตามประเภท */
+.color7 .icon {
+    color: rgb(42, 165, 101); /* Viral infections */
+}
+
+.color8 .icon {
+    color: rgb(255, 116, 116); /* Viral infections */
+}
+
 .color6 .icon {
     color: brown; /* Viral infections */
 }
@@ -158,8 +167,13 @@ fetch("header.html")
 
         <a href="otherinfec.html" target="_blank" class="related-card color6">
             <i class="fa-solid fa-microscope icon"></i>
-            <h3>Others / Unusual infections</h3>
+            <h3>Congenital infections</h3>
 
+        </a>
+
+        <a href="otherinfec.html" target="_blank" class="related-card color7">
+            <i class="fa-solid fa-mosquito icon"></i>
+            <h3>Tropical infections</h3>
         </a>
 
     </div>

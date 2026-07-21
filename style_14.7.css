@@ -1473,6 +1473,25 @@ textarea {
 }
 
 
+.color7{
+
+    border-color:#8dff97;
+}
+.color7 h3,
+.color7 i{
+
+    color:#43a148;
+}
+
+.color7 .icon-circle{
+
+    background:#e8ffda;
+}
+
+.color7 .arrow-btn{
+
+    background:#4ebb55;
+}
 
 .navbar {
     list-style: none;
