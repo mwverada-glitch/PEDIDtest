@@ -93,43 +93,73 @@ fetch("header.html")
 .color7 { border-color: rgb(42, 165, 101); }
 .color8 { border-color: rgb(255, 116, 116); }
 
+/* ICON */
 .related-card .icon {
-    font-size: 55px;
-    display: block;
-    margin: 0 auto 35px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 42px;
+    margin: 0 auto 25px;
+
+    transition: all 0.4s ease;
 }
 
-/* ICON COLORS ตามประเภท */
-.color7 .icon {
-    color: rgb(42, 165, 101); /* Viral infections */
-}
-
-.color8 .icon {
-    color: rgb(255, 116, 116); /* Viral infections */
-}
-
-.color6 .icon {
-    color: brown; /* Viral infections */
-}
-
+/* สีพื้นหลังวงกลม */
 .color1 .icon {
-    color: #8dd1b4; /* Bacterial infections */
+    color: #8dd1b4;
+    background: rgba(141, 209, 180, 0.15);
 }
 
 .color2 .icon {
-    color: #b19cd8; /* Mycobacterial infections */
+    color: #b19cd8;
+    background: rgba(177, 156, 216, 0.15);
 }
 
 .color3 .icon {
-    color: #f4b4d9; /* Fungal infections */
+    color: #f4b4d9;
+    background: rgba(244, 180, 217, 0.15);
 }
 
 .color4 .icon {
-    color: #ffd59e; /* Parasitic infections */
+    color: #ffd59e;
+    background: rgba(255, 213, 158, 0.18);
 }
 
 .color5 .icon {
-    color: #9cc4d8; /* Others / Unusual infections */
+    color: #9cc4d8;
+    background: rgba(156, 196, 216, 0.18);
+}
+
+.color6 .icon {
+    color: brown;
+    background: rgba(165, 42, 42, 0.12);
+}
+
+.color7 .icon {
+    color: rgb(42,165,101);
+    background: rgba(42,165,101,0.12);
+}
+
+.color8 .icon {
+    color: rgb(255,116,116);
+    background: rgba(255,116,116,0.12);
+}
+.related-card:hover .icon{
+    animation: wiggle 0.6s ease-in-out;
+    transform: scale(1.15);
+}
+
+@keyframes wiggle {
+    0%   { transform: rotate(0deg) scale(1); }
+    25%  { transform: rotate(-10deg) scale(1.1); }
+    50%  { transform: rotate(10deg) scale(1.15); }
+    75%  { transform: rotate(-8deg) scale(1.1); }
+    100% { transform: rotate(0deg) scale(1.15); }
 }
 </style>
 
