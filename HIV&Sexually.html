@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>Mycobacterial infection</title>
+<title>Parasitic Infections</title>
 <link rel="stylesheet" href="style_14.7.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@ fetch("header.html")
    HERO
 ========================= */
 .hero {
-    background: #f4b4d9;
+    background: rgb(255, 116, 116);
     color: white;
     padding: 45px 20px;
     text-align: center;
@@ -93,7 +93,7 @@ fetch("header.html")
 
 .topics button {
     background:#ffffff;
-    border:2px solid #f4b4d9;
+    border:2px solid rgb(255, 116, 116);
     color:#0d355d;
 
     padding:9px 20px;
@@ -108,7 +108,7 @@ fetch("header.html")
 
 .topics button:hover,
 .topics button.active {
-    background:#f4b4d9;
+    background:rgb(255, 116, 116);
     color:white;
 }
 
@@ -157,7 +157,7 @@ fetch("header.html")
 .tag{
     display:inline-block;
     width:fit-content;
-    background:#f4b4d9;
+    background:rgb(255, 116, 116);
     color:#fff;
     padding:5px 12px;
     border-radius:20px;
@@ -238,49 +238,35 @@ fetch("header.html")
 
 <!-- HERO -->
 <section class="hero">
-    <i class="fa-solid fa-lungs icon"></i>
-    <h1>Mycobacterial infection</h1>
+    <i class="fa-solid fa-heart-pulse icon"></i>
+    <h1>HIV&Sexually Transmitted Diseases</h1>
 
 </section>
-
 <div class="container">
 
     <!-- CATEGORY FILTER -->
     <div class="topics">
         <button class="active" onclick="filterCards('ทั้งหมด')">ทั้งหมด</button>
-        <button onclick="filterCards('MAC')">MAC</button>
-        <button onclick="filterCards('TB')">TB</button>  
 
     <!-- TOPIC CARDS -->
     <div class="cards">
 
-        <div class="card" data-category="MAC">
-            <img src="MAC.png" alt="MAC">
+        <div class="card" data-category="ทั้งหมด">
+            <img src="#" alt="HIV&Sexually">
             <div class="card-body">
-                <span class="tag">MAC</span>
-                <h3><i>Mycobacterium avium complex</i> (MAC)</h3>
+                <h3>ยังไม่มี</h3>
                 <div class="read-more">
-                    <a href="ID interesting case conference_MAC otomastoiditis_27Feb2025.pdf" target="_blank">
+                    <a href="#" target="_blank">
                         Read more →
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class="card" data-category="TB">
-            <img src="TB.png" alt="TB">
-            <div class="card-body">
-                <span class="tag">TB</span>
-                <h3>TB pericarditis</h3>
-                <div class="read-more">
-                    <a href="ID interesting case conference_TB pericarditis_25Dec2024.pdf" target="_blank">
-                        Read more →
-                    </a>
-                </div>
-            </div>
-        </div>
-       
-</div> <!-- ปิด .container -->
+        
+    </div>
+</div>
+
 
 <script> 
 
