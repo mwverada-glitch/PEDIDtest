@@ -95,21 +95,21 @@ fetch("header.html")
 
 .cards{
     display: grid;
-    grid-template-columns: repeat(3, 320px);
+    grid-template-columns: repeat(4, 280px); /* 4 กล่อง */
     justify-content: center;
-    gap: 30px;
-
-    margin-bottom: 80px;   /* เพิ่มตรงนี้ */
+    gap: 25px;
+    margin-bottom: 80px;
 }
 
 .card{
-    width: 320px;
+    width: 280px;      /* ให้ตรงกับ grid */
     height: 420px;
     background: #fff;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 6px 18px rgba(0,0,0,.08);
     transition: .3s;
+    margin-top: 40px;
 
     display: flex;
     flex-direction: column;
@@ -229,8 +229,8 @@ fetch("header.html")
         <button onclick="filterCards('ไวรัส')">ไวรัส</button>
         <button onclick="filterCards('แบคทีเรีย')">แบคทีเรีย</button>
         <button onclick="filterCards('เชื้อรา')">เชื้อรา</button>
-        <button onclick="filterCards('วัณโรค')">วัณโรคและวัณโรคเทียม</button>
-        <button onclick="filterCards('clinical syndrome')">clinical syndrome</button>
+        <button onclick="filterCards('วัณโรคและวัณโรคเทียม')">วัณโรคและวัณโรคเทียม</button>
+        <button onclick="filterCards('กลุ่มอาการทางคลินิก')">กลุ่มอาการทางคลินิก</button>
         
 
     <!-- TOPIC CARDS -->
@@ -302,10 +302,10 @@ fetch("header.html")
             </div>
         </div>
 
-        <div class="card" data-category="clinical syndrome">
+        <div class="card" data-category="กลุ่มอาการทางคลินิก">
             <img src="fever.png" alt="Fever">
             <div class="card-body">
-                <span class="tag">clinical syndrome</span>
+                <span class="tag">กลุ่มอาการทางคลินิก</span>
                 <h3>Fever with Rash 101: Spot, Stop, Protect</h3>
                 <div class="read-more">
                     <a href="01_Fever with Rash 101_SP_16MAY2026.pdf" target="_blank">
@@ -328,10 +328,10 @@ fetch("header.html")
             </div>
         </div>
 
-        <div class="card" data-category="clinical syndrome">
+        <div class="card" data-category="กลุ่มอาการทางคลินิก">
             <img src="Bacterial Meningitis.png" alt="Bacterial Meningitis">
             <div class="card-body">
-                <span class="tag">clinical syndrome</span>
+                <span class="tag">กลุ่มอาการทางคลินิก</span>
                 <h3>Current Trends in Bacterial Meningitis: What Pediatrician Need to Know</h3>
                 <div class="read-more">
                     <a href="03_Current Trends in Bacterial Meningitis What Pediatrician Need to Know_IDoneday2026.pdf" target="_blank">
@@ -347,6 +347,19 @@ fetch("header.html")
                 <h3>Novel antibiotics in the Era of Pediatric antimicrobial resistance (AMR)</h3>
                 <div class="read-more">
                     <a href="05_Novel antibiotics in ped AMR_16May2026_final.pdf" target="_blank">
+                        Read more →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-category="วัณโรคและวัณโรคเทียม">
+            <img src="topic_review.png" alt="NTM">
+            <div class="card-body">
+                <span class="tag">วัณโรคและวัณโรคเทียม</span>
+                <h3>Non-tuberculous mycobacterium (NTM):rapidly growing species</h3>
+                <div class="read-more">
+                    <a href="Topic review_NTM_Mar2024.pdf" target="_blank">
                         Read more →
                     </a>
                 </div>

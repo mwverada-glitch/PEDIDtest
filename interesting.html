@@ -47,12 +47,15 @@ fetch("header.html")
 /* GRID */
 .related-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(4, 280px);
+    justify-content: center;
+    gap: 45px;
 }
 
 /* CARD */
 .related-card {
+    width: 300px;
+    min-height: 220px;
     background: white;
     padding: 25px;
     border-radius: 20px;
