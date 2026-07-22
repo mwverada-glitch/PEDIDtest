@@ -2,13 +2,15 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>Workshop</title>
+<title>Viral infection</title>
 <link rel="stylesheet" href="style_14.7.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
 <script src="search-data.js"></script>
 <script src="search.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
 </head>
 <style>
 .dropdown-wrapper {
@@ -28,87 +30,330 @@ fetch("header.html")
 });
 </script>
 
-
 <style>
-/* สี */
-.related-section {
-    color: #003d6a;
-    font-size: 20px;
-    padding: 60px 40px;
+/* =========================
+   HERO
+========================= */
+.hero {
+    background: #8dd1b4;
+    color: white;
+    padding: 45px 20px;
     text-align: center;
-}
-
-.related-section h2{
-    color:#003d6a;
-    margin-bottom:35px;
-    font-size:30px;
-
-}
-
-.info-card {
-    width: 100%;
-    height: 260px;
-    border-radius: 20px;
-    padding: 30px;
+    position: relative;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    box-sizing: border-box;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
 }
 
-.pink {
-    background-color: plum;
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.05;
+    background-size: cover;
 }
 
-/* ICON */
-.icon {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    margin-bottom: 15px;
+.hero .icon {
+    font-size:60px;      /* ปรับเป็น 120px ได้ถ้าต้องการใหญ่กว่านี้ */
+    margin-bottom: 30px;
+    color: #fff;
+    display: block;
+    z-index: 1;
 }
 
-.info-card h2 {
-    color: #003d6a;
-    font-size: 28px;
-    line-height: 1.5;
-    margin: 10px 0;
+.hero h1 {
+    font-size: 40px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
 }
 
-/* BUTTON */
-.btn-learn {
-    margin-top: 15px;
-    background: white;
-    color: #003d6a;
-    padding: 8px 22px;
+.hero p {
+    margin-top: 8px;
+    font-size: 18px;
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================
+   CATEGORY BUTTONS
+========================= */
+
+.topics {
+    text-align:center;
+    margin-top:35px;      /* ระยะห่างจาก Hero */
+    margin-bottom:60px;   /* ระยะห่างจากกล่อง Card */
+}
+
+.topics button {
+    background:#ffffff;
+    border:2px solid #8dd1b4;
+    color:#0d355d;
+
+    padding:9px 20px;
+    border-radius:30px;
+
+    margin:5px;
+    cursor:pointer;
+
+    font-size:15px;
+    transition:.3s;
+}
+
+.topics button:hover,
+.topics button.active {
+    background:#8dd1b4;
+    color:white;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 320px);
+    justify-content: center;
+    gap: 30px;
+
+    margin-bottom: 80px;   /* เพิ่มตรงนี้ */
+}
+
+.card{
+    width: 320px;
+    height: 420px;
+    background: #fff;
     border-radius: 20px;
-    font-weight: bold;
-    text-decoration: none;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    transition: .3s;
+    margin-top:35px;      /* ระยะห่างจาก Hero */ 
+
+    display: flex;
+    flex-direction: column;
 }
+
+.card:hover{
+    transform: translateY(-6px);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    object-position:center;
+}
+
+.card-body{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 30px;   /* เพิ่มจาก 20px เป็น 30px */
+    margin-bottom:20px;
+}
+
+.tag{
+    display:inline-block;
+    width:fit-content;
+    background:#8dd1b4;
+    color:#fff;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    margin-top:20px;
+}
+
+.card h3{
+    font-size:18px;
+    color:#0d355d;
+    margin:0 0 10px;
+    line-height:1.4;
+}
+
+.card p{
+    color:#666;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.read-more{
+    margin-top:auto;    /* ดันปุ่มลงล่างสุด */
+}
+
+.read-more a{
+    color:#0d355d;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.read-more a:hover{
+    letter-spacing:.5px;
+}
+
+/* Tablet */
+
+@media (max-width:1100px){
+
+.cards{
+    grid-template-columns:repeat(2,320px);
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:720px){
+
+.cards{
+    grid-template-columns:320px;
+}
+
+.card{
+    width:320px;
+}
+
+}
+
+.hero {
+    height: auto !important;
+    min-height: unset !important;
+    padding: 40px 20px !important;
+    box-sizing: border-box;
+}
+
+.hero h1 {
+    margin: 0 !important;
+    font-size: 40px;
+}
+
+.hero p {
+    margin: 5px 0 0 !important;
+    font-size: 18px;
+}
+
 </style>
-<section class="related-section">
-    <h2>Japanese Encephalitis</h2>
-    <section class="related-section">
-        <div class="info-card pink">
-        <img src="girl_4225074.png" alt="" class="icon">
 
-        <h2>
-            A 7-year-old girl presented with fever with 
-            Lt hemiparesis for 2 days
-        </h2>
+<!-- HERO -->
+<section class="hero">
+        <i class="fa-solid fa-virus icon"></i>
+        <h1>Viral infections</h1>
 
-        <a href="Interhospital conference_JE CMU_23Feb2024_final.pdf" class="btn-learn">
-            ➤ Read more
-        </a>
-        </div>
-    </section>
 </section>
 
+<div class="container">
+
+    <!-- CATEGORY FILTER -->
+    <div class="topics">
+        <button class="active" onclick="filterCards('ทั้งหมด')">ทั้งหมด</button>
+        <button onclick="filterCards('Japanese Encephalitis')">Japanese Encephalitis</button>
+
+    <!-- TOPIC CARDS -->
+    <div class="cards">
+
+        <div class="card" data-category="Japanese Encephalitis">
+            <img src="Japan.png" alt="Japanese Encephalitis">
+            <div class="card-body">
+                <span class="tag">Japanese Encephalitis</span>
+                <h3>A 7-year-old girl presented with fever with Lt hemiparesis for 2 days</h3>
+                <div class="read-more">
+                    <a href="Interhospital conference_JE CMU_23Feb2024_final.pdf" target="_blank">
+                        Read more →
+                    </a>
+                </div>
+            </div>
+        </div>
+       
+</div> <!-- ปิด .container -->
+
+<script> 
+
+/* ---------- FILTER TOPICS ---------- */
+function filterCards(category) {
+    const cards = document.querySelectorAll(".card");
+    const buttons = document.querySelectorAll(".topics button");
+
+    // เปลี่ยนสีปุ่ม
+    buttons.forEach(btn => {
+        btn.classList.remove("active");
+
+        if (btn.textContent.trim() === category) {
+            btn.classList.add("active");
+        }
+    });
+
+    // แสดง/ซ่อนการ์ด
+    cards.forEach(card => {
+        if (category === "ทั้งหมด" || card.dataset.category === category) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+function openModal(mode) {
+    document.getElementById("popupModal").style.display = "flex";
+    switchTab(mode);
+}
+
+/* --- CLOSE MODAL --- */
+function closeModal() {
+    document.getElementById("popupModal").style.display = "none";
+}
+
+/* --- TOGGLE PASSWORD --- */
+function togglePassword(id) {
+    let field = document.getElementById(id);
+    field.type = field.type === "password" ? "text" : "password";
+}
+
+/* --- SWITCH TAB --- */
+function switchTab(tab) {
+    const loginTab = document.getElementById("tabLogin");
+    const regTab = document.getElementById("tabRegister");
+    const loginForm = document.getElementById("loginForm");
+    const regForm = document.getElementById("registerForm");
+
+    if (tab === "login") {
+        loginTab.classList.add("active");
+        regTab.classList.remove("active");
+        loginForm.style.display = "block";
+        regForm.style.display = "none";
+    } else {
+        regTab.classList.add("active");
+        loginTab.classList.remove("active");
+        loginForm.style.display = "none";
+        regForm.style.display = "block";
+    }
+}
+
+/* --- CLOSE WHEN CLICK OUTSIDE --- */
+window.onclick = function(event) {
+    const popupModal = document.getElementById("popupModal");
+    const loginModal = document.getElementById("loginModal");
+    const regModal = document.getElementById("registerModal");
+
+    if (event.target === popupModal) closeModal();
+    if (event.target === loginModal) loginModal.style.display = "none";
+    if (event.target === regModal) regModal.style.display = "none";
+};
+
+/*search*/
+document.querySelector(".search").addEventListener("click", function() {
+    let box = document.getElementById("searchBar");
+    box.style.display = (box.style.display === "flex") ? "none" : "flex";
+});
+
+function searchFunction() {
+    let keyword = document.getElementById("searchInput").value.trim();
+    if (keyword === "") {
+        alert("กรุณาพิมพ์คำที่ต้องการค้นหา");
+        return;
+    }
+    alert("ค้นหา: " + keyword);
+}
+</script>
 </body>
 </html>
-
-
