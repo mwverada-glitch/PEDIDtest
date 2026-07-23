@@ -612,19 +612,30 @@
         
 
         <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/ped_idcmu"><i class="fa-brands fa-instagram"></i></a>
             <a href="#"><i class="fa-brands fa-line"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61591932361910"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="mailto:pedidcmu.info@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.tiktok.com/@pedid.cmu"><i class="fa-brands fa-tiktok"></i></a>
         </div>
 
         <div class="logo-round">
             <img src="S__55492628.jpg" alt="">
         </div>
+
+        <p>ผู้เข้าชมเว็บไซต์ : <span id="counter"></span>คน</p>
     </div>
+
+    
 
 </section>
 <script>
+
+fetch('https://api.countapi.xyz/hit/PEDIDtest/visits')
+.then(response => response.json())
+.then(data=>{
+document.getElementById("counter").innerHTML=data.value;
+})    
 /* --- OPEN MODAL --- */
 function openModal(mode) {
     document.getElementById("popupModal").style.display = "flex";

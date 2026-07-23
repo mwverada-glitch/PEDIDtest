@@ -102,34 +102,39 @@ fetch("header.html")
 <style>
 
 /* ——— วางตรงนี้ ——— */
-
+.Event-title {
+    text-align: center;
+    font-size: 32px;
+    color: #003d6a;
+    margin-bottom: 30px;
+}
 .Event-section {
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 40px auto;
-    padding: 10px;
-    font-family: "Prompt", sans-serif;
+    padding: 20px;
 }
 
 .Event-grid {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(350px, 1fr));
+    gap: 30px;
     margin-top: 20px;
 }
 
 .Event-card {
-    background: peachpuff;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 4px 12px rgba(238, 181, 181, 0.12);
+    background: #ffe5d0;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
     text-align: center;
+    min-height: 600px;
 }
 
 .Event-card img {
-    width: 100%;
-    height:450px;
-    object-fit: cover;
-    border-radius: 10px;
+    width:100%;
+    height:550px;
+    object-fit:cover;
+    border-radius:15px;
 }
 
 .Event-btn {
@@ -144,7 +149,6 @@ fetch("header.html")
 </style>
 </head>
 
-</head>
 <body>
 
 <section id ="Event" class="Event-section">

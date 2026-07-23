@@ -81,39 +81,40 @@ fetch("header.html")
         }
 
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 40px auto;
         }
 
         /* TOPIC CARDS */
         .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
 
-        .card {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            overflow: hidden;
-            transition: 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: 0.3s;
+}
 
-        .card img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
 
-        .card-body {
-            padding: 20px;
-        }
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
 
         .card h3 {
             margin: 10px 0;
@@ -171,6 +172,18 @@ fetch("header.html")
                     <div class="read-more"><a href="fellow.html" target="_blank">Read more →</a>
                     </div>
                 </div>
+            </div>
+
+            <div class="card">
+                <img src="S__49274936.jpg">
+                <div class="card-body">
+                    <h3>ผ่านการตรวจสอบ WFME</h3>
+                    <p>สาขาวิชาโรคติดเชื้อ ภาควิชากุมารเวชศาสตร์ คณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่</p>
+                    <div class="read-more"><a href="WFME.html" target="_blank">Read more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
             
 
     </div>

@@ -60,6 +60,30 @@ header, nav, .dropdown-menu {
     font-family: "Prompt", sans-serif; /* ฟอนต์ Prompt ทั่วเว็บไซต์ */
 }
 
+#google_translate_element{
+    margin-left:20px;
+}
+
+.goog-te-gadget{
+    font-family: 'Prompt', sans-serif !important;
+}
+
+.goog-te-gadget img{
+    display:none;
+}
+
+.goog-logo-link{
+    display:none !important;
+}
+
+.goog-te-gadget span{
+    display:none;
+}
+
+body{
+    top:0 !important;
+}
+
 /* ตั้งค่าพื้นหลังเว็บ */
 
 body {
