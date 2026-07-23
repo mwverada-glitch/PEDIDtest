@@ -334,9 +334,10 @@ header{
     align-items:center;
     gap:10px;      /* ระยะระหว่างโลโก้ */
 }
-.button-group{
-    display:flex;
-    gap:10px;
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* ระยะห่างระหว่างปุ่ม */
 }
 
 .title-area{
@@ -2027,4 +2028,36 @@ li, span, div, td, th, label, input, textarea, select {
         height: auto;
         min-height: 500px;
     }
+}
+/* ตกแต่งกรอบปุ่มภาษาให้เข้ากัน */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 4px 8px;
+  gap: 4px;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-divider {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.lang-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
 }

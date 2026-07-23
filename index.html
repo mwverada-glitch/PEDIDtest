@@ -35,6 +35,12 @@
             <div id="tabLogin" class="tab active" onclick="switchTab('login')">เข้าสู่ระบบ</div>
             <div id="tabRegister" class="tab" onclick="switchTab('register')">ลงทะเบียน</div>
         </div>
+        <div class="lang-switch">
+            <button type="button" class="lang-btn active" id="btn-th" onclick="switchLanguage('th')">🇹🇭 TH</button>
+            <span class="lang-divider">|</span>
+            <button type="button" class="lang-btn" id="btn-en" onclick="switchLanguage('en')">🇺🇸 EN</button>
+        </div>
+        <div id="google_translate_element"></div>
 
         <!-- LOGIN FORM -->
         <div id="loginForm">
@@ -94,8 +100,13 @@
             <p>Faculty of Medicine, Chiang Mai University</p>
         </div>
     </div>
-
+    <!-- ย้ายปุ่มภาษาเข้ามาไว้ใน button-group ตรงนี้ -->
     <div class="button-group">
+        <div class="lang-switch">
+            <button type="button" class="lang-btn active" id="btn-th" onclick="switchLanguage('th')">🇹🇭 TH</button>
+            <span class="lang-divider">|</span>
+            <button type="button" class="lang-btn" id="btn-en" onclick="switchLanguage('en')">🇺🇸 EN</button>
+        </div>
         <button class="btn-primary" onclick="openModal('login')">เข้าสู่ระบบ</button>
         <button class="btn-primary" onclick="openModal('register')">ลงทะเบียน</button>
     </div>
@@ -629,6 +640,43 @@
     
 
 </section>
+
+<script type="text/javascript">
+  // 1. ตัวเริ่มต้น Google Translate (ซ่อน Widget ไว้)
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'th',
+      includedLanguages: 'en,th',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+  // 2. ฟังก์ชันสั่งแปลภาษาอัตโนมัติเมื่อกดปุ่ม TH / EN
+  function switchLanguage(lang) {
+    // บันทึกภาษาที่เลือก
+    localStorage.setItem('preferred_lang', lang);
+
+    // เปลี่ยนสีปุ่มไฮไลท์ (Active Class)
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    const activeBtn = document.getElementById(`btn-${lang}`);
+    if (activeBtn) {
+      activeBtn.classList.add('active');
+    }
+
+    // สั่งให้ Google Translate ทำงานแปลทันที
+    const select = document.querySelector('.goog-te-combo');
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event('change'));
+    }
+  }
+</script>
+
+<!-- ดึงสคริปต์ API ของ Google Translate มารัน -->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <script>
 
 fetch('https://api.countapi.xyz/hit/PEDIDtest/visits')

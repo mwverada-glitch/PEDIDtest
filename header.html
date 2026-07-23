@@ -1,17 +1,14 @@
-
-<div id="google_translate_element"></div>
+<body>
+<div id="google_translate_element" style="display: none;"></div>
 
 <div class="logo-area">
-
     <div class="logo-group">
         <div class="logo-circle">
             <img src="OIP2.webp" alt="">
         </div>
-
         <div class="logo-round">
             <img src="S__55492628.jpg" alt="">
         </div>
-
         <div class="title-area">
             <h2>PEDIATRIC INFECTIOUS DISEASES UNIT</h2>
             <p>Faculty of Medicine, Chiang Mai University</p>
@@ -19,10 +16,14 @@
     </div>
 
     <div class="button-group">
+        <div class="lang-switch">
+            <button type="button" class="lang-btn active" id="btn-th" onclick="switchLanguage('th')">🇹🇭 TH</button>
+            <span class="lang-divider">|</span>
+            <button type="button" class="lang-btn" id="btn-en" onclick="switchLanguage('en')">🇺🇸 EN</button>
+        </div>
         <button class="btn-primary" onclick="openModal('login')">เข้าสู่ระบบ</button>
         <button class="btn-primary" onclick="openModal('register')">ลงทะเบียน</button>
     </div>
-
 </div>
 
 <header>
@@ -101,17 +102,48 @@
 
 </nav>
 </header>
-<script>
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-        {
-            pageLanguage: 'th',
-            includedLanguages: 'th,en',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        },
-        'google_translate_element'
-    );
-}
+<script type="text/javascript">
+  // 1. ตัวเริ่มต้น Google Translate
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'th',
+      includedLanguages: 'en,th',
+      autoDisplay: false
+    }, 'google_translate_element');
+
+    // โหลดภาษาที่ผู้ใช้เคยเลือกไว้ล่าสุดให้อัตโนมัติเมื่อเปิดหน้าใหม่
+    setTimeout(() => {
+      const savedLang = localStorage.getItem('preferred_lang');
+      if (savedLang) {
+        switchLanguage(savedLang);
+      }
+    }, 500);
+  }
+
+  // 2. ฟังก์ชันสั่งแปลภาษาอัตโนมัติเมื่อกดปุ่ม TH / EN
+  function switchLanguage(lang) {
+    // บันทึกภาษาที่เลือก
+    localStorage.setItem('preferred_lang', lang);
+
+    // เปลี่ยนสีปุ่มไฮไลท์ (Active Class)
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    const activeBtn = document.getElementById(`btn-${lang}`);
+    if (activeBtn) {
+      activeBtn.classList.add('active');
+    }
+
+    // สั่งให้ Google Translate ทำงานแปลทันที
+    const select = document.querySelector('.goog-te-combo');
+    if (select && select.value !== lang) {
+      select.value = lang;
+      select.dispatchEvent(new Event('change'));
+    }
+  }
 </script>
 
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- ดึงสคริปต์ API ของ Google Translate มารัน -->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
