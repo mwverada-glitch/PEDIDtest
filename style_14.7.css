@@ -84,11 +84,16 @@ body{
     top:0 !important;
 }
 
+.en{
+    display:none;
+}
+
 /* ตั้งค่าพื้นหลังเว็บ */
 
 body {
     background: radial-gradient(#e9d5ff, #a7f3d0) !important;
 }
+
 
     /* --- MODAL WRAPPER --- */
 .modal {
@@ -509,11 +514,11 @@ header{
 /* === ABOUT SECTION (NEW DESIGN) === */
 .about{
     width:min(1200px,92%);
-    margin:70px auto;
+    margin:50px auto;
 
     display:flex;
     align-items:center;
-    gap:50px;
+    gap:30px;
     padding:40px;
 
     flex-wrap:wrap;
@@ -559,7 +564,7 @@ header{
     .about {
         flex-direction: column;
         padding: 40px 25px;
-        gap: 30px;
+        gap: 20px;
     }
 
     .about-left h2 {
@@ -578,18 +583,18 @@ header{
 /*service*/ 
 
 .services{
-    margin-top:30px;
+    margin-top:10px;
 
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:25px;
+
+    padding:0 60px;   /* เพิ่มระยะห่างซ้าย-ขวา */
 }
 
 .service-card {
     width: 100%;
+    margin-bottom:30px;
     padding: 20px 18px;
     border-radius: 18px;
     background: #ffffff;
