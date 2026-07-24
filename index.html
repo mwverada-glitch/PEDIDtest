@@ -738,53 +738,70 @@
 
         <!-- LEFT FORM -->
         <div class="contact-form">
-            <h2>ติดต่อเรา</h2>
+            <h2>
+                <span class="th">ติดต่อเรา</span>
+                <span class="en">Contact Us</span>
+            </h2>
 
             <form>
 
-                <input type="text" placeholder="ชื่อ" required>
-                <input type="text" placeholder="นามสกุล" required>
-                <input type="email" placeholder="อีเมล" required>
-                <input type="text" placeholder="โทรศัพท์">
+                <input type="text" id="firstName" placeholder="ชื่อ" required>
+                <input type="text" id="lastName" placeholder="นามสกุล" required>
+                <input type="email" id="email" placeholder="อีเมล" required>
+                <input type="text" id="phone" placeholder="โทรศัพท์">
 
-                <select>
-                    <option>ระบุรายละเอียด</option>
-                    <option>สอบถามข้อมูล</option>
-                    <option>ติดต่อหน่วยงาน</option>
-                    <option>อื่น ๆ</option>
+
+                <select id="contactType">
+                    <option data-th="ระบุรายละเอียด" data-en="Please select">ระบุรายละเอียด</option>
+                    <option data-th="สอบถามข้อมูล" data-en="General Inquiry">สอบถามข้อมูล</option>
+                    <option data-th="ติดต่อหน่วยงาน" data-en="Contact the Department">ติดต่อหน่วยงาน</option>
+                    <option data-th="อื่น ๆ" data-en="Others">อื่น ๆ</option>
                 </select>
 
-                <input type="text" placeholder="หน่วยงาน">
+                <input type="text" id="Organization" placeholder="หน่วยงาน">
 
                 <div class="file-box">
-                    <input type="text" placeholder="แนบไฟล์" class="file-text" disabled>
-                    <label class="file-btn">
+                    <input type="text" id="fileText" placeholder="แนบไฟล์" class="file-text" disabled>
+                    <label class="file-btn" id="fileBtn">
                         เลือกไฟล์
                         <input type="file" hidden>
                     </label>
                 </div>
 
-                <textarea placeholder="รายละเอียด"></textarea>.≤
+                <textarea id="detail" placeholder="รายละเอียด"></textarea>
 
-                <button type="submit" class="submit-btn">ตกลง</button>
-
+                <button type="submit" class="submit-btn" id="submitBtn">ตกลง</button>
             </form>
         </div>
 
         <!-- RIGHT INFO -->
         <div class="contact-info">
-            <h3>ติดต่อเรา</h3>
+            <h3>
+                <span class="th">ติดต่อเรา</span>
+                <span class="en">Contact us</span>
+            </h3>
             <p>
-                สาขาวิชาโรคติดเชื้อ ภาควิชากุมารเวชศาสตร์ <br>
-                คณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่<br>
-
+                <span class="th">
+                    สาขาวิชาโรคติดเชื้อ ภาควิชากุมารเวชศาสตร์ <br>
+                    คณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่<br>
+                </span>
+                <span class="en">Division of Pediatric Infectious Diseases 
+                    Department of Pediatrics, Faculty of Medicine, Chiang Mai University
+                </span>
             </p>
             <p>
-                อาคาร บุญสมมาติน ชั้น 6 110 ถ.อินทวโรรส <br>
-                ต.ศรีภูมิ อ.เมือง จ.เชียงใหม่ 50200
+                <span class="th">
+                    อาคาร บุญสมมาติน ชั้น 6 110 ถ.อินทวโรรส <br>
+                    ต.ศรีภูมิ อ.เมือง จ.เชียงใหม่ 50200
+                </span>
+                <span class="en">6th Floor, Bunyasammatin Building, 110 Inthawaroros Rd., 
+                    Si Phum, Mueang Chiang Mai District, Chiang Mai 50200, Thailand 
+                </span>
             </p>
-            <p>โทรศัพท์/โทรสาร 053936470</p>
-        
+            <p>
+                <span class="th">โทรศัพท์/โทรสาร +66 53 936 470 </span>
+                <span class="en">Tel / Fax: +66 53 936 470 </span>
+            </p>
 
         <div class="social-icons">
             <a href="https://www.instagram.com/ped_idcmu"><i class="fa-brands fa-instagram"></i></a>
@@ -806,6 +823,7 @@
 </section>
 
 <script>
+    
 function changeLanguage(lang){
 
     if(lang==="th"){
@@ -826,6 +844,59 @@ fetch('https://api.countapi.xyz/hit/PEDIDtest/visits')
 .then(data=>{
 document.getElementById("counter").innerHTML=data.value;
 })    
+
+// เปลี่ยนข้อความใน select
+document.querySelectorAll("#contactType option").forEach(option => {
+    option.textContent = option.dataset[lang];
+});
+
+if (lang === "th") {
+
+    document.getElementById("organization").placeholder = "หน่วยงาน";
+    document.getElementById("fileText").placeholder = "แนบไฟล์";
+    document.getElementById("detail").placeholder = "รายละเอียด";
+
+    document.getElementById("fileBtn").childNodes[0].textContent = "เลือกไฟล์ ";
+    document.getElementById("submitBtn").textContent = "ตกลง";
+
+} else {
+
+    document.getElementById("organization").placeholder = "Organization";
+    document.getElementById("fileText").placeholder = "Attach File";
+    document.getElementById("detail").placeholder = "Details";
+
+    document.getElementById("fileBtn").childNodes[0].textContent = "Choose File ";
+    document.getElementById("submitBtn").textContent = "Submit";
+
+}
+
+function changeLanguage(lang){
+
+    // เปลี่ยนข้อความทั่วไป
+    document.querySelectorAll(".th").forEach(el =>
+        el.style.display = (lang === "th") ? "block" : "none"
+    );
+
+    document.querySelectorAll(".en").forEach(el =>
+        el.style.display = (lang === "en") ? "block" : "none"
+    );
+
+    // เปลี่ยน Placeholder
+    if(lang === "th"){
+        document.getElementById("firstName").placeholder = "ชื่อ";
+        document.getElementById("lastName").placeholder = "นามสกุล";
+        document.getElementById("email").placeholder = "อีเมล";
+        document.getElementById("phone").placeholder = "โทรศัพท์";
+        document.getElementById("Organization").placeholder = "หน่วยงาน";
+    }else{
+        document.getElementById("firstName").placeholder = "First Name";
+        document.getElementById("lastName").placeholder = "Last Name";
+        document.getElementById("email").placeholder = "Email";
+        document.getElementById("phone").placeholder = "Phone Number";
+        document.getElementById("Organization").placeholder = "Organization";
+    }
+}
+
 /* --- OPEN MODAL --- */
 function openModal(mode) {
     document.getElementById("popupModal").style.display = "flex";
