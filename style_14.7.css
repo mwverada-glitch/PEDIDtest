@@ -40,7 +40,7 @@ h2{
 }
 
 h3{
-    font-size: clamp(16px, 2vw, 16px);
+    font-size: clamp(16px, 2vw, 18px);
 }
 p {
     font-weight: normal !important;
@@ -673,12 +673,12 @@ header{
 }
 
 .slide-left h2 {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .slide-left p {
   line-height: 1.7;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .slide-right {
