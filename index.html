@@ -113,17 +113,25 @@
 </div>
 
 <nav class="menu">
-
     <a href="#">HOME</a>
-
     <!-- ABOUT US -->
     <div class="dropdown-wrapper">
         <a href="#" id="aboutMenu">ABOUT US ▾</a>
 
         <ul id="aboutDropdown" class="dropdown-menu">
-            <li><a href="public.html">สาขาวิชาโรคติดเชื้อ</a></li>
+            <li>
+                <a href="public.html">
+                    <span class="th">สาขาวิชาโรคติดเชื้อ</span>
+                    <span class="en">Division of Infectious Diseases</span>
+                </a>
+            </li>
             <li><a href="#linkศูนย์">PREVENT ID CENTER</a></li>
-            <li><a href="aboutussite.html">เว็บไซต์ที่เกี่ยวข้อง</a></li>
+            <li>
+                <a href="aboutussite.html">
+                    <span class="th">เว็บไซต์ที่เกี่ยวข้อง</span>
+                    <span class="en">Related Websites</span>
+                </a>
+            </li>
             <li><a href="ouralumni.html">Our Alumni</a></li>
         </ul>
     </div>
@@ -135,49 +143,57 @@
     <div class="dropdown-wrapper">
 
         <a href="#" id="contentMenu">CONTENT ▾</a>
-
+        
         <ul id="contentDropdown" class="dropdown-menu">
-
             <li><a href="Guideline.html">Guideline</a></li>
             <li class="has-submenu">
-    <a href="#" class="submenu-toggle">Medical Content ▸</a>
 
-    <ul class="submenu">
+                <a href="#" class="submenu-toggle">Medical Content ▸</a>
 
-        <li class="submenu-title">
-            สำหรับบุคลากรทางการแพทย์
-        </li>
+                <ul class="submenu">
 
-        <li><a href="quiz_test.html">Quiz</a></li>
-        <li><a href="topic.html">Topic Review</a></li>
-        <li><a href="interesting.html">Interesting Case</a></li>
+                    <li class="submenu-title">
+                        <span class="th">สำหรับบุคลากรทางการแพทย์</span>
+                        <span class="en">For Healthcare Professionals</span>
+                    </li>
 
-        <li class="submenu-divider"></li>
+                    <li><a href="quiz_test.html">Quiz</a></li>
+                    <li><a href="topic.html">Topic Review</a></li>
+                    <li><a href="interesting.html">Interesting Case</a></li>
 
-        <li class="submenu-title">
-            สำหรับประชาชน
-        </li>
+                    
+                    <li class="submenu-divider"></li>
 
-        <li><a href="Medical content.html">Medical Podcast</a></li>
-        <li><a href="Vdio.html">วิดีโอความรู้สำหรับประชาชน</a></li>
-        <li><a href="info12.5.html">บทความสำหรับประชาชน</a></li>
-
-    </ul>
-</li>
+                    <li class="submenu-title">
+                        <span class="th">สำหรับประชาชน</span>
+                        <span class="en">For Patients & Public</span>
+                    </li>
+                    <li><a href="Medical content.html">Medical Podcast</a></li>
+                    <li>
+                        <a href="Vdio.html">
+                            <span class="th">วิดีโอความรู้สำหรับประชาชน</span>
+                            <span class="en">Patient Education Videos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="info12.5.html">
+                            <span class="th">บทความสำหรับประชาชน</span>
+                            <span class="en">Patient Education Articles</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
             <li><a href="Workshop.html">Education Training</a></li>
 
         </ul>
-
     </div>
 
     <!-- RESEARCH -->
     <a href="#RESEARCH">RESEARCH ▾</a>
 
     <!-- NEWS -->
-
-
-    <a href="Event.html" >NEWS / EVENTS ▾</a>
+    <a href="Event.html">NEWS / EVENTS ▾</a>
 
     <!-- CONTACT -->
     <a href="contact.html">CONTACT US</a>
@@ -192,7 +208,6 @@
     </div>
 
 </nav>
-
 
      <!-- Hero Section -->
 <!-- HERO SLIDER -->
@@ -591,13 +606,9 @@
                         Start Quiz
                     </a>
                 </div>
-
             </div>
-
         </section>
-
     </aside>
-
 </section>
 
 <style>.icon {
@@ -880,6 +891,7 @@ function changeLanguage(lang){
     document.querySelectorAll(".en").forEach(el =>
         el.style.display = (lang === "en") ? "block" : "none"
     );
+    let lang = localStorage.getItem("lang") || "th";
 
     // เปลี่ยน Placeholder
     if(lang === "th"){
@@ -966,7 +978,6 @@ document.addEventListener("click", function(e) {
     if (!aboutMenu.contains(e.target) && !aboutDropdown.contains(e.target)) {
         aboutDropdown.classList.remove("show");
     }
-
     if (!contentMenu.contains(e.target) && !contentDropdown.contains(e.target)) {
         contentDropdown.classList.remove("show");
     }
@@ -989,6 +1000,7 @@ function goQuiz() {
 </style>
 
 <script>
+    
 // ----- ABOUT US DROPDOWN -----
 document.getElementById("aboutMenu").addEventListener("click", function(e) {
     e.preventDefault();
@@ -1022,9 +1034,6 @@ document.addEventListener("click", function(e) {
         dropdown.classList.remove("show");
     }
 });
-
-
-
 
 </script>
 
@@ -1084,19 +1093,30 @@ var heroSwiper = new Swiper(".heroSwiper", {
 });
 
 /*search*/
-
 document.querySelector(".search").addEventListener("click", function() {
     let box = document.getElementById("searchBar");
     box.style.display = (box.style.display === "flex") ? "none" : "flex";
 });
-
-
-
-
-
 </script>
+
+<script>
+// เปิด/ปิด dropdown Content
+document.getElementById("contentMenu").addEventListener("click", function(e) {
+    e.preventDefault();
+    e.stopPropagation(); // กัน event ไปถึง document
+    document.getElementById("contentDropdown").classList.toggle("show");
+});
+
+// ปิดเมื่อคลิกนอกเมนู
+document.addEventListener("click", function(e) {
+    const menu = document.getElementById("contentMenu");
+    const dropdown = document.getElementById("contentDropdown");
+
+    if (!menu.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.remove("show");
+    }
+});
+</script>
+
 </body>
 </html>
-
-
-

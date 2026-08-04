@@ -366,15 +366,16 @@ header{
     width:100%;
     background:#17765b;
     height:60px;
-
     display:flex;
     justify-content:center;
     align-items:center;
     gap:35px;
-
     padding:0 4%;
     box-sizing:border-box;
+    position: relative;
+    z-index: 10000;
 }
+
 
 .menu a{
     color:#fff;
@@ -1692,12 +1693,12 @@ textarea {
     position: relative;
 }
 .dropdown-wrapper{
-    position:relative;
-    display:flex;
-    align-items:stretch;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
 }
 
-.dropdown-menu {
+.dropdown-menu{
     display: none;
     position: absolute;
     background: lightskyblue;
@@ -1706,6 +1707,8 @@ textarea {
     width: 250px;
     border-radius: 6px;
     list-style: none;
+    z-index: 10001;
+    overflow: visible;   /* เพิ่ม */
 }
 
 .dropdown-menu li {
@@ -1924,32 +1927,36 @@ textarea {
 /* submenu */
 
 .has-submenu{
-position:relative;
+    position:relative;
 }
 
 .submenu{
-display:none;
-position:absolute;
-left:180px;
-top:0;
-background:#5fb8b8;
-min-width:180px;
-border-radius:6px;
+    display:none;
+    position:absolute;
+    top:0;
+    left:100%;      /* ต่อจากเมนูหลัก */
+    margin-left:0;
+    background:#5fb8b8;
+    min-width:260px;
+    border-radius:6px;
+    padding:0;
+    z-index:10002;
 }
 
+
 .submenu li{
-list-style:none;
+    list-style:none;
 }
 
 .submenu a{
-display:block;
-padding:10px;
-color:white;
-text-decoration:none;
+    display:block;
+    padding:10px;
+    color:white;
+    text-decoration:none;
 }
 
-.has-submenu:hover .submenu{
-display:block;
+.has-submenu:hover > .submenu{
+    display:block;
 }
 /* ===================================================================
    RESPONSIVE FIXES (เพิ่มเติม)
