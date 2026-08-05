@@ -773,8 +773,8 @@
 
                 <div class="file-box">
                     <input type="text" id="fileText" placeholder="แนบไฟล์" class="file-text" disabled>
-                    <label class="file-btn" id="fileBtn">
-                        เลือกไฟล์
+                    <label id="fileBtn">
+                        <span id="fileBtnText">เลือกไฟล์</span>
                         <input type="file" hidden>
                     </label>
                 </div>
@@ -856,57 +856,54 @@ fetch('https://api.countapi.xyz/hit/PEDIDtest/visits')
 document.getElementById("counter").innerHTML=data.value;
 })    
 
-// เปลี่ยนข้อความใน select
-document.querySelectorAll("#contactType option").forEach(option => {
-    option.textContent = option.dataset[lang];
-});
+function changeLanguage(lang) {
 
-if (lang === "th") {
+    // บันทึกภาษาที่เลือก
+    localStorage.setItem("lang", lang);
 
-    document.getElementById("organization").placeholder = "หน่วยงาน";
-    document.getElementById("fileText").placeholder = "แนบไฟล์";
-    document.getElementById("detail").placeholder = "รายละเอียด";
+    // แสดง/ซ่อนข้อความ
+    document.querySelectorAll(".th").forEach(el => {
+        el.style.display = (lang === "th") ? "block" : "none";
+    });
 
-    document.getElementById("fileBtn").childNodes[0].textContent = "เลือกไฟล์ ";
-    document.getElementById("submitBtn").textContent = "ตกลง";
+    document.querySelectorAll(".en").forEach(el => {
+        el.style.display = (lang === "en") ? "block" : "none";
+    });
 
-} else {
+    // Placeholder
+    if (lang === "th") {
 
-    document.getElementById("organization").placeholder = "Organization";
-    document.getElementById("fileText").placeholder = "Attach File";
-    document.getElementById("detail").placeholder = "Details";
-
-    document.getElementById("fileBtn").childNodes[0].textContent = "Choose File ";
-    document.getElementById("submitBtn").textContent = "Submit";
-
-}
-
-function changeLanguage(lang){
-
-    // เปลี่ยนข้อความทั่วไป
-    document.querySelectorAll(".th").forEach(el =>
-        el.style.display = (lang === "th") ? "block" : "none"
-    );
-
-    document.querySelectorAll(".en").forEach(el =>
-        el.style.display = (lang === "en") ? "block" : "none"
-    );
-    let lang = localStorage.getItem("lang") || "th";
-
-    // เปลี่ยน Placeholder
-    if(lang === "th"){
         document.getElementById("firstName").placeholder = "ชื่อ";
         document.getElementById("lastName").placeholder = "นามสกุล";
         document.getElementById("email").placeholder = "อีเมล";
         document.getElementById("phone").placeholder = "โทรศัพท์";
         document.getElementById("Organization").placeholder = "หน่วยงาน";
-    }else{
+        document.getElementById("fileText").placeholder = "แนบไฟล์";
+        document.getElementById("detail").placeholder = "รายละเอียด";
+
+        document.getElementById("submitBtn").textContent = "ตกลง";
+        document.getElementById("fileBtnText").textContent = "เลือกไฟล์";
+
+    } else {
+
         document.getElementById("firstName").placeholder = "First Name";
         document.getElementById("lastName").placeholder = "Last Name";
         document.getElementById("email").placeholder = "Email";
         document.getElementById("phone").placeholder = "Phone Number";
         document.getElementById("Organization").placeholder = "Organization";
+        document.getElementById("fileText").placeholder = "Attach File";
+        document.getElementById("detail").placeholder = "Details";
+
+        document.getElementById("submitBtn").textContent = "Submit";
+        document.getElementById("fileBtnText").textContent = "Choose File";
+
     }
+
+    // เปลี่ยนข้อความใน Select
+    document.querySelectorAll("#contactType option").forEach(option => {
+        option.textContent = option.dataset[lang];
+    });
+
 }
 
 /* --- OPEN MODAL --- */
@@ -947,27 +944,26 @@ function switchTab(tab) {
 }
 
 /* --- CLOSE WHEN CLICK OUTSIDE --- */
-window.onclick = function(event) {
+window.addEventListener("click", function(event){
     const modal = document.getElementById("popupModal");
     if (event.target === modal) closeModal();
-};
+});
 
 
 // ----- CLOSE POPUP WHEN CLICK OUTSIDE -----
-window.onclick = function(event) {
+window.addEventListener("click", function(event){
     let loginModal = document.getElementById("loginModal");
     let regModal = document.getElementById("registerModal");
 
     if (event.target === loginModal) loginModal.style.display = "none";
     if (event.target === regModal) regModal.style.display = "none";
-};
-
-// CONTENT
-document.getElementById("contentMenu").addEventListener("click", function(e) {
-    e.preventDefault();
-    document.getElementById("contentDropdown").classList.toggle("show");
 });
+document.addEventListener("DOMContentLoaded", function () {
 
+    const lang = localStorage.getItem("lang") || "th";
+    changeLanguage(lang);
+
+});
 // Close when clicking outside
 document.addEventListener("click", function(e) {
     const aboutMenu = document.getElementById("aboutMenu");
