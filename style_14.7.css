@@ -376,14 +376,12 @@ header{
     z-index: 10000;
 }
 
-
 .menu a{
     color:#fff;
     text-decoration:none;
     font-size:15px;
     font-weight:600;
 }
-/* HERO */
 /* HERO */
 .heroSwiper{
     width:100%;
@@ -2072,4 +2070,12 @@ li, span, div, td, th, label, input, textarea, select {
 .lang-btn.active {
   background-color: #2563eb;
   color: #ffffff;
+}
+
+.th {
+    display: inline;
+}
+
+.en {
+    display: none;
 }

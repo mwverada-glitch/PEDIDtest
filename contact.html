@@ -49,67 +49,85 @@ fetch("header.html")
 
         <!-- LEFT FORM -->
         <div class="contact-form">
-            <h2>ติดต่อเรา</h2>
+            <h2>
+                <span class="th">ติดต่อเรา</span>
+                <span class="en">Contact Us</span>
+            </h2>
 
             <form>
 
-                <input type="text" placeholder="ชื่อ" required>
-                <input type="text" placeholder="นามสกุล" required>
-                <input type="email" placeholder="อีเมล" required>
-                <input type="text" placeholder="โทรศัพท์">
+                <input type="text" id="firstName" placeholder="ชื่อ" required>
+                <input type="text" id="lastName" placeholder="นามสกุล" required>
+                <input type="email" id="email" placeholder="อีเมล" required>
+                <input type="text" id="phone" placeholder="โทรศัพท์">
 
-                <select>
-                    <option>ระบุรายละเอียด</option>
-                    <option>สอบถามข้อมูล</option>
-                    <option>ติดต่อหน่วยงาน</option>
-                    <option>อื่น ๆ</option>
+
+                <select id="contactType">
+                    <option data-th="ระบุรายละเอียด" data-en="Please select">ระบุรายละเอียด</option>
+                    <option data-th="สอบถามข้อมูล" data-en="General Inquiry">สอบถามข้อมูล</option>
+                    <option data-th="ติดต่อหน่วยงาน" data-en="Contact the Department">ติดต่อหน่วยงาน</option>
+                    <option data-th="อื่น ๆ" data-en="Others">อื่น ๆ</option>
                 </select>
 
-                <input type="text" placeholder="หน่วยงาน">
+                <input type="text" id="Organization" placeholder="หน่วยงาน">
 
                 <div class="file-box">
-                    <input type="text" placeholder="แนบไฟล์" class="file-text" disabled>
-                    <label class="file-btn">
-                        เลือกไฟล์
+                    <input type="text" id="fileText" placeholder="แนบไฟล์" class="file-text" disabled>
+                    <label id="fileBtn">
+                        <span id="fileBtnText">เลือกไฟล์</span>
                         <input type="file" hidden>
                     </label>
                 </div>
 
-                <textarea placeholder="รายละเอียด"></textarea>
+                <textarea id="detail" placeholder="รายละเอียด"></textarea>
 
-                <button type="submit" class="submit-btn">ตกลง</button>
-
+                <button type="submit" class="submit-btn" id="submitBtn">ตกลง</button>
             </form>
         </div>
 
         <!-- RIGHT INFO -->
         <div class="contact-info">
-            <h3>ติดต่อเรา</h3>
+            <h3>
+                <span class="th">ติดต่อเรา</span>
+                <span class="en">Contact us</span>
+            </h3>
             <p>
-                สาขาวิชาโรคติดเชื้อ ภาควิชากุมารเวชศาสตร์ <br>
-                คณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่<br>
-
+                <span class="th">
+                    สาขาวิชาโรคติดเชื้อ ภาควิชากุมารเวชศาสตร์ <br>
+                    คณะแพทยศาสตร์ มหาวิทยาลัยเชียงใหม่<br>
+                </span>
+                <span class="en">Division of Pediatric Infectious Diseases 
+                    Department of Pediatrics, Faculty of Medicine, Chiang Mai University
+                </span>
             </p>
             <p>
-                อาคาร บุญสมมาติน ชั้น 6 110 ถ.อินทวโรรส <br>
-                ต.ศรีภูมิ อ.เมือง จ.เชียงใหม่ 50200
+                <span class="th">
+                    อาคาร บุญสมมาติน ชั้น 6 110 ถ.อินทวโรรส <br>
+                    ต.ศรีภูมิ อ.เมือง จ.เชียงใหม่ 50200
+                </span>
+                <span class="en">6th Floor, Bunyasammatin Building, 110 Inthawaroros Rd., 
+                    Si Phum, Mueang Chiang Mai District, Chiang Mai 50200, Thailand 
+                </span>
             </p>
-            <p>โทรศัพท์/โทรสาร 053936470</p>
-        
+            <p>
+                <span class="th">โทรศัพท์/โทรสาร +66 53 936 470 </span>
+                <span class="en">Tel / Fax: +66 53 936 470 </span>
+            </p>
 
         <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/ped_idcmu"><i class="fa-brands fa-instagram"></i></a>
             <a href="#"><i class="fa-brands fa-line"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61591932361910"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="mailto:pedidcmu.info@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.tiktok.com/@pedid.cmu"><i class="fa-brands fa-tiktok"></i></a>
         </div>
 
         <div class="logo-round">
             <img src="S__55492628.jpg" alt="">
         </div>
     </div>
-
-</section>
+</script>
+    
 <style>
     .contact-section {
     background: #7d65ab;

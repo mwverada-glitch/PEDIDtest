@@ -1,4 +1,7 @@
+
+<link rel="stylesheet" href="style_14.7.css">
 <body>
+
 <div id="google_translate_element" style="display: none;"></div>
 
 <div class="logo-area">
@@ -10,20 +13,20 @@
             <img src="S__55492628.jpg" alt="">
         </div>
         <div class="title-area">
-            <h2>PEDIATRIC INFECTIOUS DISEASES UNIT</h2>
+            <h2>Pediatric Infectious Disease Division</h2>
             <p>Faculty of Medicine, Chiang Mai University</p>
         </div>
     </div>
 
     <div class="button-group">
-        <div class="lang-switch">
-            <button type="button" class="lang-btn active" id="btn-th" onclick="switchLanguage('th')">🇹🇭 TH</button>
-            <span class="lang-divider">|</span>
-            <button type="button" class="lang-btn" id="btn-en" onclick="switchLanguage('en')">🇺🇸 EN</button>
-        </div>
+        <div class="language-switch">
+        <button onclick="changeLanguage('th')">🇹🇭 ไทย</button>
+        <button onclick="changeLanguage('en')">🇬🇧 English</button>
+    </div>
         <button class="btn-primary" onclick="openModal('login')">เข้าสู่ระบบ</button>
         <button class="btn-primary" onclick="openModal('register')">ลงทะเบียน</button>
     </div>
+
 </div>
 
 <header>
@@ -34,9 +37,19 @@
     <div class="dropdown-wrapper">
         <a class="dropdown-link">ABOUT US ▾</a>
         <ul id="aboutDropdown" class="dropdown-menu">
-            <li><a href="public.html">สาขาวิชาโรคติดเชื้อ</a></li>
+            <li>
+                <a href="public.html">
+                    <span class="th">สาขาวิชาโรคติดเชื้อ</span>
+                    <span class="en">Division of Infectious Diseases</span>
+                </a>
+            </li>
             <li><a href="#linkศูนย์">PREVENT ID CENTER</a></li>
-            <li><a href="aboutussite.html">เว็บไซต์ที่เกี่ยวข้อง</a></li>
+            <li>
+                <a href="aboutussite.html">
+                    <span class="th">เว็บไซต์ที่เกี่ยวข้อง</span>
+                    <span class="en">Related Websites</span>
+                </a>
+            </li>
             <li><a href="ouralumni.html">Our Alumni</a></li>
         </ul>
     </div>
@@ -54,7 +67,8 @@
     <ul class="submenu">
 
         <li class="submenu-title">
-            สำหรับบุคลากรทางการแพทย์
+            <span class="th">สำหรับบุคลากรทางการแพทย์</span>
+            <span class="en">For Healthcare Professionals</span>
         </li>
 
         <li><a href="quiz_test.html">Quiz</a></li>
@@ -64,12 +78,23 @@
         <li class="submenu-divider"></li>
 
         <li class="submenu-title">
-            สำหรับประชาชน
+            <span class="th">สำหรับประชาชน</span>
+            <span class="en">For Patients & Public</span>
         </li>
 
         <li><a href="Medical content.html">Medical Podcast</a></li>
-        <li><a href="Vdio.html">วิดีโอความรู้สำหรับประชาชน</a></li>
-        <li><a href="info12.5.html">บทความสำหรับประชาชน</a></li>
+        <li>
+            <a href="Vdio.html">
+                <span class="th">วิดีโอความรู้สำหรับประชาชน</span>
+                <span class="en">Patient Education Videos</span>
+            </a>
+        </li>
+        <li>
+            <a href="info12.5.html">
+                <span class="th">บทความสำหรับประชาชน</span>
+                <span class="en">Patient Education Articles</span>
+            </a>
+        </li>
 
     </ul>
 </li>
@@ -82,7 +107,12 @@
         <ul class="dropdown-menu">
             <li><a href="research_overview.html">Research Focus</a></li>
             <li><a href="research_projects.html">Research Collaboration</a></li>
-            <li><a href="Studycorrdi.html">บุคลากรฝ่ายวิจัย</a></li>
+            <li>
+                <a href="Studycorrdi.html">
+                    <span class="th">บุคลากรฝ่ายวิจัย</span>
+                    <span class="en">Research Team</span>
+                </a>
+            </li>
             <li><a href="https://scholars.med.cmu.ac.th/department/Pediatrics">Publications</a></li>
         </ul>
     </div>
@@ -102,48 +132,24 @@
 </nav>
 </header>
 
-<script type="text/javascript">
-  // 1. ตัวเริ่มต้น Google Translate
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'th',
-      includedLanguages: 'en,th',
-      autoDisplay: false
-    }, 'google_translate_element');
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const lang = localStorage.getItem("lang") || "th";
+    changeLanguage(lang);
+});
 
-    // โหลดภาษาที่ผู้ใช้เคยเลือกไว้ล่าสุดให้อัตโนมัติเมื่อเปิดหน้าใหม่
-    setTimeout(() => {
-      const savedLang = localStorage.getItem('preferred_lang');
-      if (savedLang) {
-        switchLanguage(savedLang);
-      }
-    }, 500);
-  }
+function changeLanguage(lang) {
 
-  // 2. ฟังก์ชันสั่งแปลภาษาอัตโนมัติเมื่อกดปุ่ม TH / EN
-  function switchLanguage(lang) {
-    // บันทึกภาษาที่เลือก
-    localStorage.setItem('preferred_lang', lang);
+    localStorage.setItem("lang", lang);
 
-    // เปลี่ยนสีปุ่มไฮไลท์ (Active Class)
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.remove('active');
+    document.querySelectorAll(".th").forEach(el => {
+        el.style.display = (lang === "th") ? "inline" : "none";
     });
-    const activeBtn = document.getElementById(`btn-${lang}`);
-    if (activeBtn) {
-      activeBtn.classList.add('active');
-    }
 
-    // สั่งให้ Google Translate ทำงานแปลทันที
-    const select = document.querySelector('.goog-te-combo');
-    if (select && select.value !== lang) {
-      select.value = lang;
-      select.dispatchEvent(new Event('change'));
-    }
-  }
+    document.querySelectorAll(".en").forEach(el => {
+        el.style.display = (lang === "en") ? "inline" : "none";
+    });
+}
+
 </script>
-
-<!-- ดึงสคริปต์ API ของ Google Translate มารัน -->
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </body>
